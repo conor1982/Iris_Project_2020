@@ -10,45 +10,47 @@ Programming and Scripting Module Final Project
 6.	Scatter plot of each variable
 7.	Summary of overall analysis
 8.	References
-1.	Research the Data
-•	Irish Data Set
-•	Background to the data set
-•	What is in the data – subject of the data
-•	Who did the research
-•	Write summary about dataset
-•	References
+
+
+## 1.	Research the Data
+*	Irish Data Set
+*	Background to the data set
+*	What is in the data – subject of the data
+*	Who did the research
+*	Write summary about dataset
+*	References
 
 ## 2.	Iris Dataset
-•	Download into github
-•	Data checks Rows, Data types, empty values ,count of variables etc. –script
-•	References
+*	Download into github
+*	Data checks Rows, Data types, empty values ,count of variables etc. –script
+*	References
 
 ## 3.	Python Libaries
-•	List of libraries to be used
-•	Software used 
-•	Summary (why they were used features)
-•	Check –script
-•	References
+*	List of libraries to be used
+*	Software used 
+*	Summary (why they were used features)
+*	Data Check –script
+*	References
 
 ## 4.	Summarise Data
-•	Descriptive summary of data (Pandas) –script (function with argument)?
-•	Max mean min range for data, outliers boxplot?
-•	Summarise all 
-•	Summarise each variable – variable for each group script
-•	Append to text file summary – out put redirection script
+*	Descriptive summary of data (Pandas) –script (function with argument)?
+*	Max mean min range for data, outliers boxplot?
+*	Summarise all 
+*	Summarise each variable – variable for each group script
+*	Append to text file summary – out put redirection script
 
 ## 5.	Histograms
-•	Save Histogram of each variable to png – script
-•	Overlap Histograms to show frequency of each variable – script
-•	References
+*	Save Histogram of each variable to png – script
+*	Overlap Histograms to show frequency of each variable – script
+*	References
+
 ## 6.	Scatter plots
-•	Scatter plots for each variable – script
-•	Sepal Width v sepal length
-•	Petal width v petal length
-•	Pair plot? Might use as part of summary
-•	References
+*	Scatter plots for each variable – script
+*	Sepal Width v sepal length
+*	Petal width v petal length
+*	Pair plot? Might use as part of summary
+*	References
 
 ## 7.	References
-•	Appendix of each ref with num
-•	Links to references
-
+*	Appendix of each ref with num
+*   Links to references
