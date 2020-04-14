@@ -78,6 +78,7 @@ The data classifies three variants of the Iris flower based on certain attribute
 ![Iris Variants](https://github.com/conor1982/Iris_Project_2020/blob/master/variants.png)
 
 For each variant, data was gathered based on four different attributes: [2]
+
     1 Sepal Length (in cm)
     2 Sepal Width (in cm)
     3 Petal Length (in cm)
