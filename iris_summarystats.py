@@ -24,6 +24,8 @@ df.columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'spe
 print("\nStats Summary")
 print(df.describe().round(2))
 
+#summarystats = df.describe().round(2).to_csv("Summary.csv",'\n')
+
 print("\nCorrealtion")
 print(df.corr().round(2))
 
@@ -51,7 +53,7 @@ Sepal_Length_Summary.columns = ['Sepal Length Summary Stats','Setosa','Versicolo
 #export above to csv, with no index and a comma separtor in place
 Sepal_Length_Summary.to_csv('Summary.csv',index=False, sep = ',')
 
-
+#ef https://www.python-course.eu/pandas_data_files.php
 #Comments the same as Sepal Length expect for one addition in relation to appending to csv file
 sw =df[['sepal_width', 'species']]
 sepal_width =  sw.pivot(columns='species',values='sepal_width').describe().round(2)
@@ -83,3 +85,27 @@ print(Sepal_Length_Summary)
 print(Sepal_Width_Summary)
 print(Petal_Length_Summary)
 print(Petal_Width_Summary)
+
+
+#spavg = df["sepal_length"].mean()
+#s#pmax = df["sepal_length"].max()
+#sp#min = df["sepal_length"].min()
+#spstd = df["sepal_length"].std()
+#sprange =df["sepal_length"].max() - df["sepal_length"].min() 
+
+group = df.groupby('species')
+
+def sumof(x):
+    print("\nSummary of", x)
+    print("\nMean of",group[x].mean().to_string())
+    print("\nMin of",group[x].min().to_string())
+    print("\nMax of",group[x].max().to_string())
+    print("\nStdev of",group[x].std().to_string())
+    print("\nRange of",(group[x].max() - group[x].min()).to_string())
+
+
+
+
+
+
+
