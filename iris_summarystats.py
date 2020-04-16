@@ -43,13 +43,13 @@ sepal_length =  sl.pivot(columns='species',values='sepal_length').describe().rou
 sepal_length.to_csv("sl.csv")
 
 #read in csv created above
-Sepal_length_Summary = pd.read_csv('sl.csv')
+Sepal_Length_Summary = pd.read_csv('sl.csv')
 
 #Assign column headings here so csv file will get a column heading for summary stat table
-Sepal_length_Summary.columns = ['Sepal Length Summary Stats','Setosa','Versicolor', 'Virginica']
+Sepal_Length_Summary.columns = ['Sepal Length Summary Stats','Setosa','Versicolor', 'Virginica']
 
 #export above to csv, with no index and a comma separtor in place
-Sepal_length_Summary.to_csv('Summary.csv',index=False, sep = ',')
+Sepal_Length_Summary.to_csv('Summary.csv',index=False, sep = ',')
 
 
 #Comments the same as Sepal Length expect for one addition in relation to appending to csv file
@@ -78,3 +78,8 @@ petal_width.to_csv("pw.csv")
 Petal_Width_Summary = pd.read_csv('pw.csv')
 Petal_Width_Summary.columns = ['Petal Width Summary Stats','Setosa','Versicolor', 'Virginica']
 Petal_Width_Summary.to_csv('Summary.csv',index=False, sep = ',',mode='a')
+
+print(Sepal_Length_Summary)
+print(Sepal_Width_Summary)
+print(Petal_Length_Summary)
+print(Petal_Width_Summary)
