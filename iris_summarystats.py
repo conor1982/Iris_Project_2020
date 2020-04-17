@@ -45,7 +45,7 @@ sepal_length =  sl.pivot(columns='species',values='sepal_length').describe().rou
 sepal_width =  sw.pivot(columns='species',values='sepal_width').describe().round(2)
 petal_length =  pl.pivot(columns='species',values='petal_length').describe().round(2)
 petal_width =  pw.pivot(columns='species',values='petal_width').describe().round(2)
-
+print(sepal_width)
 #overall headers for text file sections
 overall_header = "Sepal Length,Sepal Width,Petal Length,Petal Width"
 
@@ -62,20 +62,20 @@ species_header = "Stats Type, Setosa, Versicolor, Virginica"
 
 
 #function to create and append summary to text file
-def createtxtfile(mode,heading,irisvar):
+def createtxtfile(mode,heading,headertype,irisvar):
      with open('Summary.txt', mode, newline='') as f:
          f.write(L[heading]+"\n")
-         f.write(overall_header+'\n')
+         f.write(headertype+'\n')
          irisvar.astype(str).to_csv(f, header=False, sep =',')
          f.write("\n")
 
 
 #function call
-createtxtfile('w',0,summary)
-createtxtfile('a',1,sepal_length)
-createtxtfile('a',2,sepal_width)
-createtxtfile('a',3,petal_length)
-createtxtfile('a',4,petal_width)
+createtxtfile('w',0,overall_header,summary)
+createtxtfile('a',1,species_header,sepal_length)
+createtxtfile('a',2,species_header,sepal_width)
+createtxtfile('a',3,species_header,petal_length)
+createtxtfile('a',4,species_header,petal_width)
 
 
 
