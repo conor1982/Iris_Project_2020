@@ -13,16 +13,19 @@ Programming and Scripting Module Final Project
 
 
 ## 1.	Research the Data
-*	Who did research, where it was done, when etc.
+*	Who did research, where it was done, when etc. 
 *   Type of dataset -  multi variable
 *	What is in the data – variables, measurments in cm, size of data set
 *	Write summary about dataset
 *	References
+*   REVIEW AND ADD MORE INFO ON LINEAR LDA
 
 ## 2.	Iris Dataset
 *	Download into github
 *	Data checks Rows, Data types, empty values ,count of variables etc. –script
 *	References
+*   COMPLETED - CLEAN UP CODE AND REFERENCES
+*   README SECTION TO BE ADDED
 
 ## 3.	Python Libaries
 *	List of libraries to be used
@@ -37,11 +40,15 @@ Programming and Scripting Module Final Project
 *	Summarise all 
 *	Summarise each variable – variable for each group script
 *	Append to text file summary – out put redirection script
+*   COMPLETE - FOR REVIEW AND FURTHER CLEAN UP, REFERENCES ETC.
+*   README SECTION TO BE ADDED
 
 ## 5.	Histograms
 *	Save Histogram of each variable to png – script
 *	Overlap Histograms to show frequency of each variable – script
 *	References
+*   SAMPLE CODE CREATED - ONGOING
+
 
 ## 6.	Scatter plots
 *	Scatter plots for each variable – script
@@ -49,6 +56,7 @@ Programming and Scripting Module Final Project
 *	Petal width v petal length
 *	Pair plot? Might use as part of summary
 *	References
+*   SAME CODE CREATED - ONGOING
 
 ## 7.	References
 *	Appendix of each ref with num
@@ -96,6 +104,3 @@ Previous studies on the data set show that Iris Setosa is easily seperable from 
 2. https://towardsdatascience.com/an-introduction-to-multivariate-data-analysis-ece93ceb1ed3
 3. https://archive.ics.uci.edu/ml/datasets/iris
 4. https://medium.com/codebagng/basic-analysis-of-the-iris-data-set-using-python-2995618a6342
-
- 
-
