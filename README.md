@@ -1,7 +1,7 @@
 # Iris_Project_2020
 Programming and Scripting Module Final Project
 
-### Objectives of Project
+## Objectives of Project
 1.	Research background information about the data and write a summary
 2.	Download Data and import into Github
 3.	Programming Language used and libraries to be used in project
@@ -12,7 +12,7 @@ Programming and Scripting Module Final Project
 8.	References
 
 
-## 1.	Research the Data
+### 1.	Research the Data
 *	Who did research, where it was done, when etc. 
 *   Type of dataset -  multi variable
 *	What is in the data – variables, measurments in cm, size of data set
@@ -20,21 +20,21 @@ Programming and Scripting Module Final Project
 *	References
 *   REVIEW AND ADD MORE INFO ON LINEAR LDA
 
-## 2.	Iris Dataset
+### 2.	Iris Dataset
 *	Download into github
 *	Data checks Rows, Data types, empty values ,count of variables etc. –script
 *	References
 *   COMPLETED - CLEAN UP CODE AND REFERENCES
 *   README SECTION TO BE ADDED
 
-## 3.	Python Libaries
+### 3.	Python Libaries
 *	List of libraries to be used
 *	Software used 
 *	Summary (why they were used features)
 *	Data Check –script
 *	References
 
-## 4.	Summarise Data
+### 4.	Summarise Data
 *	Descriptive summary of data (Pandas) –script (function with argument)?
 *	Max mean min range for data, outliers boxplot?
 *	Summarise all 
@@ -43,14 +43,14 @@ Programming and Scripting Module Final Project
 *   COMPLETE - FOR REVIEW AND FURTHER CLEAN UP, REFERENCES ETC.
 *   README SECTION TO BE ADDED
 
-## 5.	Histograms
+### 5.	Histograms
 *	Save Histogram of each variable to png – script
 *	Overlap Histograms to show frequency of each variable – script
 *	References
 *   SAMPLE CODE CREATED - ONGOING
 
 
-## 6.	Scatter plots
+### 6.	Scatter plots
 *	Scatter plots for each variable – script
 *	Sepal Width v sepal length
 *	Petal width v petal length
@@ -58,21 +58,21 @@ Programming and Scripting Module Final Project
 *	References
 *   SAME CODE CREATED - ONGOING
 
-## 7.   CDF
+### 7.   CDF
 *   Graph CDF of each variable by secies
 *   Example of model
 *   CDF smmary table Petal Width v Petal Length
 *   CDF explanation
 
 
-## 8.	References
+### 8.	References
 *	Appendix of each ref with num
 *   Links to references
 
-### Background information on the Data
+## Background information on the Data
 (what is the data, who collected it, how it was collected, uses today?)
 
-## Overview of Irish Data Set
+### Overview of Irish Data Set
 The Iris data set  is a multivariate data set introduced by the British statistician and biologist Ronald Fisher in his 1936 paper The use of multiple measurements in taxonomic problems as an example of linear discriminant analysis. [1]
 
 ![Iris Flower](https://github.com/conor1982/Iris_Project_2020/blob/master/iris.png)
@@ -83,7 +83,7 @@ Multivariate (Data analysis) refers to any statistical technique used to analyze
 
 Multivariate data analysis is a set of statistical models that examine patterns in multidimensional data by considering, at once, several data variables. It is an expansion of bivariate data analysis, which considers only two variables in its models. As multivariate models consider more variables, they can examine more complex phenomena and find data patterns that more accurately represent the real world. [2]
 
-## Summary of Data
+### Summary of Data
 The data classifies three variants of the Iris flower based on certain attributes. The three variants of Iris flower found in the dataset are: [3]
     
     1 Iris Setosa
@@ -106,22 +106,79 @@ There are 50 different data points for each variant of Iris. With the complete d
 Previous studies on the data set show that Iris Setosa is easily seperable from the other two linearly. There is some overlap between the other two making it more difficult to distinguish from each other. [3] This will be demonstrated in this project through the use of various Visualisation techniques. We will aslo show using the Cumulative Distribution Fucntion (CDF) how an initial simple model with fairly high accuracy can be created through initial Exploratory Data Analysis [5] [6]. 
 
 
-### Importing the Irish Data Set 
+## Importing the Irish Data Set 
 
-## Source of Data
+### Source of Data
 
 The dataset used in this project was downloaded from the UCI Machine Learning Repository website [3]. Once downloaded it was added to my Github Repsository. Using the Pandas libary in Python a number of checks were conducted to sense check the version of the imported iris data. [7]
 
-# Fig 1
+#### Fig 1
 ![Pic of Raw Data](https://github.com/conor1982/Iris_Project_2020/blob/master/Screenshots/iris_raw_data.png)
 
 We can see from Fig 1 that heading needed to be added to this data source. The columns were given the names : sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species'.
 
 ```python
 df.columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
+```
+### Overview of Data
 
+In researching the dataset, it is undertood that their is 150 rows of data. The variable measurements are in CM and there is three variants (species) of Iris in the dataset. 
 
+I felt it useful to create an overview of the dataset in Python. This included:
+   
+    1 First 5 and last 5 rows of the Dataset
+    2 Shape of the Dataset
+    3 Dimensions of Dataset
+    4 Data Types
+    5 Count of Species variants
+    6 Count of null values
 
+```python
+#first 5 lines of dataset
+print("\nFirst 5 lines of Dataset")
+print(df.head(5))
+
+#last 5 lines of data set
+print("\nLast 5 lines of Dataset")
+print(df.tail(5))
+
+#shape of data
+print("\nShape of dataset Rows:Columns")
+print(df.shape)
+
+#dimension of data
+print("\nDataset Dimensions")
+print(df.ndim)
+
+#data types float string etc
+print("\nData Types")
+print(df.dtypes)
+
+#Count of variants
+print("\nCount of Iris Variants")
+print(df['species'].value_counts())
+
+#check for null values
+print("\nCount of Null values")
+print(df.isnull().sum())
+
+#print summary stats
+print('summary')
+print(df.describe())
+```
+#### Fig 2
+! [Dataset Overview](https://github.com/conor1982/Iris_Project_2020/blob/master/Screenshots/iris_dataset_overview.png)
+
+Through this overview, a good understanding of the actual dataset can be obtained. The first and last 5 rows, will gve a useful look of what a row contains. The shape of the dataset being 150 ros and 5 columns matches what was gathered during researching the data. 
+
+The datatypes are also an important element of the dataset to understand. Here we see the four different variables as float numbers and the species a string value. There was also no null values in this dataset.
+
+Understanding each element of this gave me confidence that the dataset downloaded for the project was of good integrity.
+
+One further check was running the pandas.describe function. The results from this were compared with other summarries found online. There were no discrepencies found in any of the datasets used in the comparison [8] [9].
+
+#### Fig 3
+![Summary Stats](https://github.com/conor1982/Iris_Project_2020/blob/master/Screenshots/Iris_summary.png)
 
 ### References
 
@@ -132,8 +189,13 @@ df.columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'spe
 5. https://towardsdatascience.com/what-why-and-how-to-read-empirical-cdf-123e2b922480
 6. https://www.kaggle.com/playingmyway/eda-of-iris-dataset
 7. https://pandas.pydata.org/pandas-docs/stable/reference/frame.html
+8. https://medium.com/@harimittapalli/exploratory-data-analysis-iris-dataset-9920ea439a3e
+9. https://www.researchgate.net/figure/Example-summary-statistics-for-the-Iris-data_fig4_26387272
+
 
 
 ### Figures
 
-1. Raw Data 
+1. Raw Data
+2. Dataset overiew
+3. Summary Stats
