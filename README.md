@@ -58,7 +58,14 @@ Programming and Scripting Module Final Project
 *	References
 *   SAME CODE CREATED - ONGOING
 
-## 7.	References
+## 7.   CDF
+*   Graph CDF of each variable by secies
+*   Example of model
+*   CDF smmary table Petal Width v Petal Length
+*   CDF explanation
+
+
+## 8.	References
 *	Appendix of each ref with num
 *   Links to references
 
@@ -70,7 +77,7 @@ The Iris data set  is a multivariate data set introduced by the British statisti
 
 ![Iris Flower](https://github.com/conor1982/Iris_Project_2020/blob/master/iris.png)
 
-It is sometimes called Anderson’s Iris data set because Edgar Anderson collected the data to quantify the morphologic variation of Iris flowers of three related species. Two of the three species were collected in the Gaspé Peninsula “all from the same pasture, and picked on the same day and measured at the same time by the same person with the same apparatus”. [1, 4]
+It is sometimes called Anderson’s Iris data set because Edgar Anderson collected the data to quantify the morphologic variation of Iris flowers of three related species. Two of the three species were collected in the Gaspé Peninsula “all from the same pasture, and picked on the same day and measured at the same time by the same person with the same apparatus”. [1] [4]
 
 Multivariate (Data analysis) refers to any statistical technique used to analyze data which arises from more than one variable. 
 
@@ -96,7 +103,25 @@ The dataset contains a set of 150 records. Each row in the table represents one 
 
 There are 50 different data points for each variant of Iris. With the complete dataset containing only 150 observations, it is a very popular dataset in teaching and study. It contains real data of good quality which is viewed more favourably than using test data for instance.
 
-Previous studies on the data set show that Iris Setosa is easily seperable from the other two linearly. There is some overlap between the other two making it more difficult to distinguish from eaqch other. [3] This will be demonstrated in this project.  
+Previous studies on the data set show that Iris Setosa is easily seperable from the other two linearly. There is some overlap between the other two making it more difficult to distinguish from each other. [3] This will be demonstrated in this project through the use of various Visualisation techniques. We will aslo show using the Cumulative Distribution Fucntion (CDF) how an initial simple model with fairly high accuracy can be created through initial Exploratory Data Analysis [5] [6]. 
+
+
+### Importing the Irish Data Set 
+
+## Source of Data
+
+The dataset used in this project was downloaded from the UCI Machine Learning Repository website [3]. Once downloaded it was added to my Github Repsository. Using the Pandas libary in Python a number of checks were conducted to sense check the version of the imported iris data. [7]
+
+# Fig 1
+![Pic of Raw Data](https://github.com/conor1982/Iris_Project_2020/blob/master/Screenshots/iris_raw_data.png)
+
+We can see from Fig 1 that heading needed to be added to this data source. The columns were given the names : sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species'.
+
+```python
+df.columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
+
+
+
 
 ### References
 
@@ -104,3 +129,11 @@ Previous studies on the data set show that Iris Setosa is easily seperable from 
 2. https://towardsdatascience.com/an-introduction-to-multivariate-data-analysis-ece93ceb1ed3
 3. https://archive.ics.uci.edu/ml/datasets/iris
 4. https://medium.com/codebagng/basic-analysis-of-the-iris-data-set-using-python-2995618a6342
+5. https://towardsdatascience.com/what-why-and-how-to-read-empirical-cdf-123e2b922480
+6. https://www.kaggle.com/playingmyway/eda-of-iris-dataset
+7. https://pandas.pydata.org/pandas-docs/stable/reference/frame.html
+
+
+### Figures
+
+1. Raw Data 
