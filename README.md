@@ -209,6 +209,7 @@ https://www.tablesgenerator.com/markdown_tables
 #### Range
 
 | Range           	|     	|
+|-----------------	|-----	|
 | Sepal Width     	|     	|
 | Iris-setosa     	| 2.1 	|
 | Iris-versicolor 	| 1.4 	|
@@ -237,6 +238,7 @@ https://www.tablesgenerator.com/markdown_tables
 #### Range
 
 | Range           	|     	|
+|-----------------	|-----	|
 | Petal Length    	|     	|
 | Iris-setosa     	| 0.9 	|
 | Iris-versicolor 	| 2.1 	|
@@ -266,6 +268,7 @@ https://www.tablesgenerator.com/markdown_tables
 #### Range
 
 | Range           	|     	|
+|-----------------	|-----	|
 | Petal Width     	|     	|
 | Iris-setosa     	| 0.5 	|
 | Iris-versicolor 	| 0.8 	|
