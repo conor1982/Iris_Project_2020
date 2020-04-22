@@ -16,6 +16,8 @@ df = pd.read_csv('irisdata.csv', header=None)
 #Adding column names
 df.columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
 
+#APPEND FROM HERE FOR ANALYSIS.PY
+
 #ref https://seaborn.pydata.org/tutorial/axis_grids.html
 #ref https://medium.com/@harimittapalli/exploratory-data-analysis-iris-dataset-9920ea439a3e
 #ref https://www.kaggle.com/rakesh6184/seaborn-plot-to-visualize-iris-data
@@ -46,6 +48,7 @@ plt.figure(figsize=(10,11))
 sns.heatmap(df.corr(),annot=True, linewidths=.5, cmap='Blues')
 #save map as heatmap.png
 plt.savefig('Heat Map')
+plt.close()
 
 #Hist Function
 def makehist(x):
@@ -75,6 +78,8 @@ pet_width_hist =makehist('petal_width')
 
 #scaterplot function calls
 scatter_sl_sw = makeplot('sepal_length','sepal_width')
-scatter_pl_pw = makeplot('petal_length','petal_width')
+scatter_pl_pw = makeplot('sepal_length','petal_length')
 scatter_sl_pw = makeplot('sepal_length','petal_width')
-scatter_pl_sw = makeplot('petal_length','sepal_width')
+scatter_pl_sw = makeplot('sepal_width','petal_length')
+scatter_pl_sw = makeplot('sepal_width','petal_width')
+scatter_pl_sw = makeplot('petal_length','petal_width')
