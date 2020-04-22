@@ -2,72 +2,14 @@
 Programming and Scripting Module Final Project
 
 ## Objectives of Project
-1.	Research background information about the data and write a summary
-2.	Download Data and import into Github
-3.	Programming Language used and libraries to be used in project
-4.	Summarise the Data
+1.	Research the Dataset: Background information on the dataset with a summary.
+2.	Download Data and upload into Github
+3.	Summary of Programming Language used and libraries utlised.
+4.	Summarise statistics of the Data
 5.	Histogram of each variable
-6.	Scatter plot of each variable
-7.	Summary of overall analysis
+6.	Scatter plots of each variable
+7.	Learning outcomes
 8.	References
-
-
-### 1.	Research the Data
-*	Who did research, where it was done, when etc. 
-*   Type of dataset -  multi variable
-*	What is in the data – variables, measurments in cm, size of data set
-*	Write summary about dataset
-*	References
-*   REVIEW AND ADD MORE INFO ON LINEAR LDA
-
-### 2.	Iris Dataset
-*	Download into github
-*	Data checks Rows, Data types, empty values ,count of variables etc. –script
-*	References
-*   COMPLETED - CLEAN UP CODE AND REFERENCES
-*   README SECTION TO BE ADDED
-
-### 3.	Python Libaries
-*	List of libraries to be used
-*	Software used 
-*	Summary (why they were used features)
-*	Data Check –script
-*	References
-
-### 4.	Summarise Data
-*	Descriptive summary of data (Pandas) –script (function with argument)?
-*	Max mean min range for data, outliers boxplot?
-*	Summarise all 
-*	Summarise each variable – variable for each group script
-*	Append to text file summary – out put redirection script
-*   COMPLETE - FOR REVIEW AND FURTHER CLEAN UP, REFERENCES ETC.
-*   README SECTION TO BE ADDED
-
-### 5.	Histograms
-*	Save Histogram of each variable to png – script
-*	Overlap Histograms to show frequency of each variable – script
-*	References
-*   SAMPLE CODE CREATED - ONGOING
-
-
-### 6.	Scatter plots
-*	Scatter plots for each variable – script
-*	Sepal Width v sepal length
-*	Petal width v petal length
-*	Pair plot? Might use as part of summary
-*	References
-*   SAME CODE CREATED - ONGOING
-
-### 7.   CDF
-*   Graph CDF of each variable by secies
-*   Example of model
-*   CDF smmary table Petal Width v Petal Length
-*   CDF explanation
-
-
-### 8.	References
-*	Appendix of each ref with num
-*   Links to references
 
 ## Background information on the Data
 (what is the data, who collected it, how it was collected, uses today?)
@@ -90,7 +32,7 @@ The data classifies three variants of the Iris flower based on certain attribute
     2 Iris Versicolour
     3 Irish Virginica
 
-![Iris Variants](https://github.com/conor1982/Iris_Project_2020/blob/master/variants.png)
+![Iris Variants](https://github.com/conor1982/Iris_Project_2020/blob/master/Screenshots/variants.png)
 
 For each variant, data was gathered based on four different attributes: [2]
 
@@ -105,6 +47,24 @@ There are 50 different data points for each variant of Iris. With the complete d
 
 Previous studies on the data set show that Iris Setosa is easily seperable from the other two linearly. There is some overlap between the other two making it more difficult to distinguish from each other. [3] This will be demonstrated in this project through the use of various Visualisation techniques. We will aslo show using the Cumulative Distribution Fucntion (CDF) how an initial simple model with fairly high accuracy can be created through initial Exploratory Data Analysis [5] [6]. 
 
+## How to Run and Python Libaries used
+
+### Instructions: How to Run
+* software used
+* how to run
+* python version
+
+### Pandas
+* note on pandas
+
+### matplotlib
+* note on matplotlib
+
+### Numpy
+* note on numpy
+
+### Seaborn
+* note on seanborn 
 
 ## Importing the Irish Data Set 
 
@@ -180,6 +140,167 @@ One further check was running the pandas.describe function. The results from thi
 #### Fig 3
 ![Summary Stats](https://github.com/conor1982/Iris_Project_2020/blob/master/Screenshots/Iris_summary.png)
 
+## Summary Statistics
+
+https://www.tablesgenerator.com/markdown_tables
+
+### Overall Summary Stats
+
+Overall Summary Stats      	|              	|             	|              	|             	|
+|----------------------------	|--------------	|-------------	|--------------	|-------------	|
+| Stats Type                 	| Sepal Length 	| Sepal Width 	| Petal Length 	| Petal Width 	|
+| count                      	| 150.0        	| 150.0       	| 150.0        	| 150.0       	|
+| mean                       	| 5.84         	| 3.05        	| 3.76         	| 1.2         	|
+| std                        	| 0.83         	| 0.43        	| 1.76         	| 0.76        	|
+| min                        	| 4.3          	| 2.0         	| 1.0          	| 0.1         	|
+| 25%                        	| 5.1          	| 2.8         	| 1.6          	| 0.3         	|
+| 50%                        	| 5.8          	| 3.0         	| 4.35         	| 1.3         	|
+| 75%                        	| 6.4          	| 3.3         	| 5.1          	| 1.8         	|
+| max                        	| 7.9          	| 4.4         	| 6.9          	| 2.5         	|
+
+* comment 1
+* comment 2
+
+### Summary of each Variable by Species Type
+
+#### Sepal Length
+
+| Sepal Length Summary Stats    |              	             
+|----------------------------	|--------------	|-------------	|--------------	|
+| Stats Type                 	| Setosa       	| Versicolor  	| Virginica    	|             	
+| count                      	| 50.0         	| 50.0        	| 50.0         	|             	
+| mean                       	| 5.01         	| 5.94        	| 6.59         	|             	
+| std                        	| 0.35         	| 0.52        	| 0.64         	|             	
+| min                        	| 4.3          	| 4.9         	| 4.9          	|             	
+| 25%                        	| 4.8          	| 5.6         	| 6.22         	|             	
+| 50%                        	| 5.0          	| 5.9         	| 6.5          	|             	
+| 75%                        	| 5.2          	| 6.3         	| 6.9          	|             	
+| max                        	| 5.8          	| 7.0         	| 7.9          	|             	
+
+#### Range 
+| Range                      	|            	         	
+|----------------------------	|--------------	|
+| Sepal Length               	|              	|
+| Iris-setosa                	| 1.5          	|             	
+| Iris-versicolor            	| 2.1          	|             	
+| Iris-virginica             	| 3.0          	|
+
+* comment 1
+* comment 2
+
+#### Sepal Width
+
+ Sepal Width Summary Stats  	|              	
+|----------------------------	|--------------	|-------------	|--------------	|
+| Stats Type                 	| Setosa       	| Versicolor  	| Virginica    	|             	
+| count                      	| 50.0         	| 50.0        	| 50.0         	|             	
+| mean                       	| 3.42         	| 2.77        	| 2.97         	|             	
+| std                        	| 0.38         	| 0.31        	| 0.32         	|             	
+| min                        	| 2.3          	| 2.0         	| 2.2          	|             	
+| 25%                        	| 3.12         	| 2.52        	| 2.8          	|             	
+| 50%                        	| 3.4          	| 2.8         	| 3.0          	|             	
+| 75%                        	| 3.68         	| 3.0         	| 3.18         	|             	
+| max                        	| 4.4          	| 3.4         	| 3.8          	|             	
+
+* comment 1
+* comment 2
+
+#### Range
+
+| Range                      	|              
+|----------------------------	|--------------	|
+| Sepal Width                	|              	|             	
+| Iris-setosa                	| 2.1          	|             	
+| Iris-versicolor            	| 1.4          	|             
+| Iris-virginica             	| 1.6          	|             	
+ 
+* comment 1
+* comment 2
+
+#### Petal Length
+
+| Petal Length Summary Stats 	|              
+|----------------------------	|--------------	|-------------	|--------------	|
+| Stats Type                 	| Setosa       	| Versicolor  	| Virginica    	|             
+| count                      	| 50.0         	| 50.0        	| 50.0         	|             	
+| mean                       	| 1.46         	| 4.26        	| 5.55         	|             	
+| std                        	| 0.17         	| 0.47        	| 0.55         	|             	
+| min                        	| 1.0          	| 3.0         	| 4.5          	|             	
+| 25%                        	| 1.4          	| 4.0         	| 5.1          	|             	
+| 50%                        	| 1.5          	| 4.35        	| 5.55         	|             	
+| 75%                        	| 1.58         	| 4.6         	| 5.88         	|             	
+| max                        	| 1.9          	| 5.1         	| 6.9          	|             	
+
+* comment 1
+* comment 2
+
+#### Range
+
+| Range                      	|              	           	              	             	
+|----------------------------	|--------------	|
+| Petal Length               	|              	|             	          	
+| Iris-setosa                	| 0.9          	|                     	
+| Iris-versicolor            	| 2.1          	|             	        	
+| Iris-virginica             	| 2.4          	|             	        	
+
+* comment 1
+* comment 2
+
+#### Petal Width
+
+| Petal Width Summary Stats  	|                         	
+| Stats Type                 	| Setosa       	| Versicolor  	| Virginica    	|             	
+|----------------------------	|--------------	|-------------	|--------------	|
+| count                      	| 50.0         	| 50.0        	| 50.0         	|             	
+| mean                       	| 0.24         	| 1.33        	| 2.03         	|             	
+| std                        	| 0.11         	| 0.2         	| 0.27         	|             	
+| min                        	| 0.1          	| 1.0         	| 1.4          	|             	
+| 25%                        	| 0.2          	| 1.2         	| 1.8          	|             	
+| 50%                        	| 0.2          	| 1.3         	| 2.0          	|             	
+| 75%                        	| 0.3          	| 1.5         	| 2.3          	|             	
+| max                        	| 0.6          	| 1.8         	| 2.5          	|             	
+
+* comment 1
+* comment 2
+
+#### Range
+| Range                      	|              	             	
+|----------------------------	|--------------	|
+| Petal Width                	|              	|             	              	             	
+| Iris-setosa                	| 0.5          	|             	              	             	
+| Iris-versicolor            	| 0.8          	|             	              	             	
+| Iris-virginica             	| 1.1          	|
+
+* comment
+* comment
+
+#### Correlation
+|Correlation                	|              	  
+|----------------------------	|--------------	|
+| Variable                   	| Sepal Length 	| Sepal Width 	| Petal Length 	| Petal Width 	|
+| sepal_length               	| 1.0          	| -0.11       	| 0.87         	| 0.82        	|
+| sepal_width                	| -0.11        	| 1.0         	| -0.42        	| -0.36       	|
+| petal_length               	| 0.87         	| -0.42       	| 1.0          	| 0.96        	|
+| petal_width                	| 0.82         	| -0.36       	| 0.96         	| 1.0         	|
+
+PAIRPLOT
+* comments
+
+HEATMAP
+* comments
+
+SEPAL WIDTH SEPLAL LENGTH SCATTTER
+* comments
+
+PETAL WIDTH LENGTH SCATTER
+* comments
+
+HISTOGRAMS
+* comments
+
+CDF PDF GRAPHS
+* comments
+
 ### References
 
 1. https://en.wikipedia.org/wiki/Iris_flower_data_set
@@ -198,4 +319,4 @@ One further check was running the pandas.describe function. The results from thi
 
 1. Raw Data
 2. Dataset overiew
-3. Summary Stats
+
