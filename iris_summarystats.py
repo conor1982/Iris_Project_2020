@@ -49,6 +49,7 @@ petal_width =  pw.pivot(columns='species',values='petal_width').describe().round
 
 #ref https://www.geeksforgeeks.org/python-pandas-dataframe-corr/
 correlation = df.corr().round(2)
+covariance =df.cov().round(2)
 
 #range and variance
 #variance function
@@ -71,7 +72,7 @@ overall_header = "Stats Type, Sepal Length, Sepal Width, Petal Length,Petal Widt
 corr_header = "Variable, Sepal Length, Sepal Width, Petal Length,Petal Width"
 
 #lists to slice to give text file section headings
-L = ['Overall Summary Stats','Sepal Length Summary Stats', 'Sepal Width Summary Stats','Petal Length Summary Stats', 'Petal Width Summary Stats', 'Correlation','Range']
+L = ['Overall Summary Stats','Sepal Length Summary Stats', 'Sepal Width Summary Stats','Petal Length Summary Stats', 'Petal Width Summary Stats', 'Correlation','Range','Covariance']
 VL = ['Sepal Length', 'Sepal Width','Petal Length','Petal Width']
 
 #header for diff species for text file output
@@ -107,7 +108,7 @@ createtxtfile('a',6,VL[2],pl_range)
 createtxtfile('a',4,species_header,petal_width)
 createtxtfile('a',6,VL[3],pw_range)
 createtxtfile('a',5,corr_header,correlation)
-
+createtxtfile('a',7,corr_header,covariance)
 
 #print statements for each summary section
 print("Overall Summary")
@@ -142,5 +143,5 @@ print(pw_range.to_string())
 print("\n Correlation ")
 print(correlation)
 
-
-
+print("\n Covariance ")
+print(covariance)   
