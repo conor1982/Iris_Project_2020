@@ -29,67 +29,29 @@ def overlap(variant,variable):
     y = np.array(x[variable])
     return y
 
-#petal widths
-versi_pw = overlap('Iris-versicolor','petal_width')
-set_pw =overlap('Iris-setosa','petal_width')
-vir_pw = overlap('Iris-virginica','petal_width')
-
-max_set_pw = set_pw.max()
-min_set_pw = set_pw.min()
-
-max_versi_pw = versi_pw.max()
-min_versi_pw = versi_pw.min()
-
-max_vir_pw = vir_pw.max()
-min_vir_pw = vir_pw.min()
-
-set_pw_IN_versi_pw = np.count_nonzero(set_pw[:]>min_versi_pw)/np.count_nonzero(set_pw)
-print("The percentage of Setosa Flower Petal Widths overlapping into Versicolor is {:.2%}".format(set_pw_IN_versi_pw))
-
-set_pw_IN_vir_pw = np.count_nonzero(set_pw[:]>min_vir_pw)/np.count_nonzero(set_pw)
-print("The percentage of Setosa Flower Petal Widths overlapping into Virginica is {:.2%}".format(set_pw_IN_versi_pw))
-
-ver_pw_IN_vir_pw = np.count_nonzero(versi_pw[:]>min_vir_pw)/np.count_nonzero(versi_pw)
-print("The percentage of Versicolor Flower Petal Widths overlapping into Virginica is {:.2%}".format(ver_pw_IN_vir_pw))
-
-vir_pw_IN_ver_pw = np.count_nonzero(vir_pw[:]<max_versi_pw)/np.count_nonzero(vir_pw)
-print("The percentage of Virginica Flower Petal Widths overlapping into Versicolor is {:.2%}".format(vir_pw_IN_ver_pw))
-
-set_pw_pdf = set_pw/sum(set_pw) 
-set_pw_cdf = np.cumsum(set_pw_pdf)
-
-versi_pw_pdf = versi_pw/sum(versi_pw) 
-versi_pw_cdf = np.cumsum(versi_pw_pdf)
-
-vir_pw_pdf = vir_pw/sum(vir_pw) 
-vir_pw_cdf = np.cumsum(vir_pw_pdf)
-
-
-#petal lengthss
+#petal lengths
 versi_pl = overlap('Iris-versicolor','petal_length')
 set_pl =overlap('Iris-setosa','petal_length')
 vir_pl = overlap('Iris-virginica','petal_length')
 
-max_set_pl = set_pl.max()
-min_set_pl = set_pl.min()
+#parameters based on Histogram Analysis
+#model parameters to return % accuracy
+print('Univariate Analysis of Petal Length based on Histograms Observations')
 
-max_versi_pl = versi_pl.max()
-min_versi_pl = versi_pl.min()
+max_set_pl = 2.1
+max_versi_pl = 4.8
+max_vir_pl = 4.8
 
-max_vir_pl = vir_pl.max()
-min_vir_pl = vir_pl.min()
 
-set_pl_IN_versi_pl = np.count_nonzero(set_pl[:]>min_versi_pl)/np.count_nonzero(set_pl)
-print("\nThe percentage of Setosa Flower Petal Lengths overlapping into Versicolor is {:.2%}".format(set_pl_IN_versi_pl))
 
-set_pl_IN_vir_pl = np.count_nonzero(set_pl[:]>min_vir_pl)/np.count_nonzero(set_pl)
-print("The percentage of Setosa Flower Petal Lengths overlapping into Virginica is {:.2%}".format(set_pl_IN_versi_pl))
+setosa_pred = np.count_nonzero(set_pl[:]<max_set_pl)
+print("Applying {} as the maximum petal length to identify a Setosa Flower predicts {} Setosas".format(max_set_pl,setosa_pred))
 
-ver_pl_IN_vir_pl = np.count_nonzero(versi_pl[:]>min_vir_pl)/np.count_nonzero(versi_pl)
-print("The percentage of Versicolor Flower Petal Lengths overlapping into Virginica is {:.2%}".format(ver_pl_IN_vir_pl))
+versicolor_pred = np.count_nonzero(versi_pl[:]<max_versi_pl)
+print("Applying {} as the maximum petal length to identify a Versicolor Flower predicts {} Versicolors".format(max_versi_pl,versicolor_pred))
 
-vir_pl_IN_ver_pl = np.count_nonzero(vir_pl[:]<max_versi_pl)/np.count_nonzero(vir_pl)
-print("The percentage of Virginica Flower Petal Widths overlapping into Versicolor is {:.2%}".format(vir_pl_IN_ver_pl))
+virginica_pred = np.count_nonzero(vir_pl[:]>=max_vir_pl)
+print("Applying {} as the minimum petal length to identify a Viriginica Flower would predicts {} Virginicas".format(max_vir_pl,virginica_pred))
 
 set_pl_pdf = set_pl/sum(set_pl) 
 set_pl_cdf = np.cumsum(set_pl_pdf)
@@ -105,21 +67,55 @@ vir_pl_cdf = np.cumsum(vir_pl_pdf)
 
 def cdf_pdf(variant,variable):
     x=df[df['species']==variant]
-    counts, bin_edges= np.histogram(x[variable],bins=10, density= True)
+    graph = counts, bin_edges= np.histogram(x[variable],bins=10, density= True)
     pdf=counts/(sum(counts))
     cdf=np.cumsum(pdf)
-    plt.plot(bin_edges[1:],pdf)
-    plt.plot(bin_edges[1:],cdf)
+    plt.plot(bin_edges[1:],pdf, label='{} PDF'.format(variant))
+    plt.plot(bin_edges[1:],cdf, label=' {} CDF'.format(variant))
     plt.grid()
+    plt.legend(loc =0)
+    plt.savefig('CDF and PDF')
+    return graph
     
+#set_pl_cdf_pdf = cdf_pdf('Iris-setosa','petal_length')
+#ver_pl_cdf_pdf = cdf_pdf('Iris-versicolor','petal_length')
+#vir_pl_cdf_pdf = cdf_pdf('Iris-virginica','petal_length')
+
+
+print('\nModel of Petal Length based on PDF and CDF Observations')
+
+cdf_set_pred = 1.9
+cdf_vir_versi_sep = 5
+
+Pred = []
+
+
+for row in df['petal_length']:
     
-set_pl_cdf_pdf = cdf_pdf('Iris-setosa','petal_length')
-ver_pl_cdf_pdf = cdf_pdf('Iris-versicolor','petal_length')
-vir_pl_cdf_pdf = cdf_pdf('Iris-virginica','petal_length')
-plt.show()
+    if row <= cdf_set_pred:
+       Pred.append("Predicted Setosa")
+    elif row>cdf_set_pred and row <cdf_vir_versi_sep:
+        Pred.append('Predicted Versicolor')
+    elif row>=cdf_vir_versi_sep:
+        Pred.append('Predicted Virginica')
+
+set_pred =Pred.count('Predicted Setosa')
+ver_pred =Pred.count('Predicted Versicolor')
+vir_pred =Pred.count('Predicted Virginica')
+
+set_acc = (set_pred-50)/50
+ver_acc = (ver_pred-50)/50
+vir_acc= (vir_pred-50)/50
 
 
 
+print("\nApplying {} as the maximum petal length to identify a Setosa Flower predicts {} Setosas".format(cdf_set_pred,set_pred))
+print("Applying {} as the maximum petal length to identify a Versicolor Flower predicts {} Versicolors".format(cdf_vir_versi_sep,ver_pred))
+print("Applying {} as the minimum petal length to identify a Viriginca Flower predicts {} Virginicas".format(cdf_vir_versi_sep,vir_pred))
+
+print(set_acc, 'error rate for Setosa')
+print(ver_acc, 'error rate for Versicolor')
+print(vir_acc, 'error rate for Virginica')
 
 
-
+#https://chrisalbon.com/python/data_wrangling/pandas_create_column_with_loop/
