@@ -1,8 +1,9 @@
 #Conor O'Riordan
-#Part2 of project plan
 #Upload iris data
 #Data Sense Checks
 #Explore Pandas functions
+
+#START OF ANALYSIS.PY
 
 #Pandas libary import
 import pandas as pd
@@ -15,16 +16,16 @@ import sys
 #iris data downloaded from http://archive.ics.uci.edu/ml/machine-learning-databases/iris/
 
 #import irisdata
-#header = None added to not have first row as heading
-#df = pd.read_csv('irisdata.csv', header=None)
-
 #es.py weekly task
-df = pd.read_csv(f'{sys.argv[1]}', header=None)
+#command line argument
+#df = pd.read_csv(f'{sys.argv[1]}', header=None)
+df = pd.read_csv('irisdata.csv', header=None)
 
 #Adding column names
+print("\nColumns added to Dataset")
 df.columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
 
-# \n to insert line bewteen print spaces
+#\n to insert line bewteen print spaces
 
 #first 5 lines of dataset
 print("\nFirst 5 lines of Dataset")
@@ -54,5 +55,4 @@ print(df['species'].value_counts())
 #ref https://stackoverflow.com/questions/26266362/how-to-count-the-nan-values-in-a-column-in-pandas-dataframe
 print("\nCount of Null values")
 print(df.isnull().sum())
-
 
