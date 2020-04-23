@@ -1,6 +1,7 @@
 # Iris_Project_2020
 Programming and Scripting Module Final Project
 
+***
 ## Objectives of Project
 1.	Research the Dataset: Background information on the dataset with a summary.
 2.	Download Data and upload into Github
@@ -11,6 +12,7 @@ Programming and Scripting Module Final Project
 7.	Learning outcomes
 8.	References
 
+***
 ## Background information on the Data
 (what is the data, who collected it, how it was collected, uses today?)
 
@@ -49,6 +51,7 @@ There are 50 different data points for each variant of Iris. With the complete d
 
 Previous studies on the data set show that Iris Setosa is easily seperable from the other two linearly. There is some overlap between the other two making it more difficult to distinguish from each other. [3] This will be demonstrated in this project through the use of various Visualisation techniques. We will aslo show using the Cumulative Distribution Fucntion (CDF) how an initial simple model with fairly high accuracy can be created through initial Exploratory Data Analysis [5] [6]. 
 
+***
 ## How to Run and Python Libaries used
 
 ### Instructions: How to Run
@@ -68,6 +71,7 @@ Previous studies on the data set show that Iris Setosa is easily seperable from 
 ### Seaborn
 * note on seanborn 
 
+***
 ## Importing the Irish Data Set 
 
 ### Source of Data
@@ -139,6 +143,7 @@ Understanding each element of this gave me confidence that the dataset downloade
 
 One further check was running the pandas.describe function. The results from this were compared with other summarries found online. There were no discrepencies found in any of the datasets used in the comparison [8] [9].
 
+***
 ## Summary Statistics
 
 Again utilising the Pandas libary, summary statistics tables were created. One for the overall data set and one for each variable by species type. The range was also calculate for each variable by species type. Finally a correlation matrix was created for each variable. All summaries were rounded to two decimel places.
@@ -338,6 +343,7 @@ createtxtfile('a',6,VL[3],pw_range)
 createtxtfile('a',5,corr_header,correlation)
 createtxtfile('a',7,corr_header,covariance)
 ```
+***
 ## Exploratory Data Analysis and Supporting Graphics
 
 ### Pairplot
@@ -551,9 +557,11 @@ We can observe from this Graph that: [19]
 * approx 95% of Versicolor  have a petal length of <= 5
 * approx 90% of Virigina have a petal length >5
 
+***
 ## Summary and Conclusion
 
-## References
+***
+### References
 
 1. https://en.wikipedia.org/wiki/Iris_flower_data_set
 2. https://towardsdatascience.com/an-introduction-to-multivariate-data-analysis-ece93ceb1ed3
@@ -576,9 +584,37 @@ We can observe from this Graph that: [19]
 19. https://www.youtube.com/watch?v=hCBr43Wv_Es
 20. https://www.youtube.com/watch?v=11BFX7Ygtyo
 
+***
 ### References in Code
 
+[A] https://stackoverflow.com/questions/29645153/remove-name-dtype-from-pandas-output
+[B]https://stackoverflow.com/questions/26266362/how-to-count-the-nan-values-in-a-column-in-pandas-dataframe
+[C] https://pandas.pydata.org/pandas-docs/version/0.17.1/generated/pandas.DataFrame.describe.html
+[D] https://www.dataquest.io/blog/pandas-cheat-sheet
+[E] https://www.shanelynn.ie/summarising-aggregation-and-grouping-data-in-python-pandas/
+[F] https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html
+[G] https://www.python-course.eu/pandas_data_files.php
+[H] https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.round.html
+[I] https://www.geeksforgeeks.org/python-pandas-dataframe-corr/
+[J] https://www.w3schools.com/python/python_functions.asp
+[K] https://thispointer.com/how-to-append-text-or-lines-to-a-file-in-python/
+[L] https://stackoverflow.com/questions/17530542/how-to-add-pandas-data-to-an-existing-csv-file
+[M] https://stackoverflow.com/questions/23231605/convert-pandas-dataframe-to-csv-string/
+[N] https://stackoverflow.com/questions/3348460/csv-file-written-with-python-has-blank-lines-between-each-row
+[O] https://stackoverflow.com/questions/29645153/remove-name-dtype-from-pandas-output
+[P] https://seaborn.pydata.org/generated/seaborn.pairplot.html
+[Q] https://seaborn.pydata.org/generated/seaborn.heatmap.html
+[R] https://seaborn.pydata.org/tutorial/color_palettes.html
+[S] https://stackoverflow.com/questions/49039581/matplotlib-savefig-will-not-overwrite-old-files
+[T] https://seaborn.pydata.org/generated/seaborn.distplot.html
+[U] https://seaborn.pydata.org/generated/seaborn.scatterplot.html
+[V] https://www.w3schools.com/python/numpy_creating_arrays.asp
+[W] https://www.programcreek.com/python/example/102210/numpy.count_nonzero
+[X] https://medium.com/@rishav.jnit/exploratory-data-analysis-eda-on-iris-dataset-using-python-cadd850c1fc6
+[Y] https://www.kaggle.com/playingmyway/eda-of-iris-dataset
+[Z] https://chrisalbon.com/python/data_wrangling/pandas_create_column_with_loop/
 
+***
 ### Figures
 
 1. Iris Flower
