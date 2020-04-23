@@ -55,21 +55,42 @@ Previous studies on the data set show that Iris Setosa is easily seperable from 
 ## How to Run and Python Libaries used
 
 ### Instructions: How to Run
-* software used
-* how to run
-* python version
 
-### Pandas
-* note on pandas
+* Analysis.py can be ran from the command line. 
+* The Irisdata set must be entered as an argument on the command line also.
+* The Iris Data set must be in the same folder you are running the command from.
+* All graphical outputs and summary tables will appear in this folder once ran.
+* If the incorrect file name is entered or the file does not exisit within the relevant folder, the user will recieve an error message i.e. *'File not Found'*
 
-### matplotlib
-* note on matplotlib
+### Programming Language
+* Python was used in this project
+* Python version used *Python3.7.6*
+* Program developed in Microsoft Visual Studio
 
-### Numpy
-* note on numpy
+### Python Libaries
 
-### Seaborn
-* note on seanborn 
+#### Pandas
+* imported alias *Pandas as pd*
+* extensively used in this project
+* popular libary for data analysis and data manipulation
+
+#### Numpy
+* imported alias *Numpy as np*
+* allows to create extensive arrays and matrices
+
+#### matplotlib
+* imported alias *Matplotlib.pyplot as plt*
+* numerical extension to Numpy
+* Extensive plotting tools
+
+#### Seaborn
+* imported alias *Seaborn as sns*
+* Seaborn is a Python visualization library based on matplotlib
+* Provides excellent graphical visualisations
+* Provides a higher level of visualisation than Matplotlib
+
+#### Sys
+* imported to allow program to be run from a command line argument
 
 ***
 ## Importing the Irish Data Set 
@@ -563,76 +584,76 @@ We can observe from this Graph that: [19]
 ***
 ### References
 
-1. https://en.wikipedia.org/wiki/Iris_flower_data_set
-2. https://towardsdatascience.com/an-introduction-to-multivariate-data-analysis-ece93ceb1ed3
-3. https://archive.ics.uci.edu/ml/datasets/iris
-4. https://medium.com/codebagng/basic-analysis-of-the-iris-data-set-using-python-2995618a6342
-5. https://towardsdatascience.com/what-why-and-how-to-read-empirical-cdf-123e2b922480
-6. https://www.kaggle.com/playingmyway/eda-of-iris-dataset
-7. https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html
-8. https://medium.com/@harimittapalli/exploratory-data-analysis-iris-dataset-9920ea439a3e
-9. https://www.researchgate.net/figure/Example-summary-statistics-for-the-Iris-data_fig4_26387272
-10. https://www.tablesgenerator.com/markdown_tables
-11. https://www.w3schools.com/python/python_functions.asp
-12. https://stackoverflow.com/questions/17530542/how-to-add-pandas-data-to-an-existing-csv-file
-13. https://stackoverflow.com/questions/23231605/convert-pandas-dataframe-to-csv-string
-14. https://statistics.laerd.com/statistical-guides/pearson-correlation-coefficient-statistical-guide.php
-15. https://statistics.laerd.com/statistical-guides/understanding-histograms.php
-16. https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data/introduction-to-scatterplots/a/scatterplots-and-correlation-review
-17. https://www.investopedia.com/terms/p/pdf.asp
-18. https://wiki.analytica.com/Cdf_and_Pdf_Functions
-19. https://www.youtube.com/watch?v=hCBr43Wv_Es
-20. https://www.youtube.com/watch?v=11BFX7Ygtyo
+* 1. https://en.wikipedia.org/wiki/Iris_flower_data_set
+* 2. https://towardsdatascience.com/an-introduction-to-multivariate-data-analysis-ece93ceb1ed3
+* 3. https://archive.ics.uci.edu/ml/datasets/iris
+* 4. https://medium.com/codebagng/basic-analysis-of-the-iris-data-set-using-python-2995618a6342
+* 5. https://towardsdatascience.com/what-why-and-how-to-read-empirical-cdf-123e2b922480
+* 6. https://www.kaggle.com/playingmyway/eda-of-iris-dataset
+* 7. https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html
+* 8. https://medium.com/@harimittapalli/exploratory-data-analysis-iris-dataset-9920ea439a3e
+* 9. https://www.researchgate.net/figure/Example-summary-statistics-for-the-Iris-data_fig4_26387272
+* 10. https://www.tablesgenerator.com/markdown_tables
+* 11. https://www.w3schools.com/python/python_functions.asp
+* 12. https://stackoverflow.com/questions/17530542/how-to-add-pandas-data-to-an-existing-csv-file
+* 13. https://stackoverflow.com/questions/23231605/convert-pandas-dataframe-to-csv-string
+* 14. https://statistics.laerd.com/statistical-guides/pearson-correlation-coefficient-statistical-guide.php
+* 15. https://statistics.laerd.com/statistical-guides/understanding-histograms.php
+* 16. https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data/introduction-to-scatterplots/a/scatterplots-and-correlation-review
+* 17. https://www.investopedia.com/terms/p/pdf.asp
+* 18. https://wiki.analytica.com/Cdf_and_Pdf_Functions
+* 19. https://www.youtube.com/watch?v=hCBr43Wv_Es
+* 20. https://www.youtube.com/watch?v=11BFX7Ygtyo
 
 ***
 ### References in Code
 
-[A] https://stackoverflow.com/questions/29645153/remove-name-dtype-from-pandas-output
-[B]https://stackoverflow.com/questions/26266362/how-to-count-the-nan-values-in-a-column-in-pandas-dataframe
-[C] https://pandas.pydata.org/pandas-docs/version/0.17.1/generated/pandas.DataFrame.describe.html
-[D] https://www.dataquest.io/blog/pandas-cheat-sheet
-[E] https://www.shanelynn.ie/summarising-aggregation-and-grouping-data-in-python-pandas/
-[F] https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html
-[G] https://www.python-course.eu/pandas_data_files.php
-[H] https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.round.html
-[I] https://www.geeksforgeeks.org/python-pandas-dataframe-corr/
-[J] https://www.w3schools.com/python/python_functions.asp
-[K] https://thispointer.com/how-to-append-text-or-lines-to-a-file-in-python/
-[L] https://stackoverflow.com/questions/17530542/how-to-add-pandas-data-to-an-existing-csv-file
-[M] https://stackoverflow.com/questions/23231605/convert-pandas-dataframe-to-csv-string/
-[N] https://stackoverflow.com/questions/3348460/csv-file-written-with-python-has-blank-lines-between-each-row
-[O] https://stackoverflow.com/questions/29645153/remove-name-dtype-from-pandas-output
-[P] https://seaborn.pydata.org/generated/seaborn.pairplot.html
-[Q] https://seaborn.pydata.org/generated/seaborn.heatmap.html
-[R] https://seaborn.pydata.org/tutorial/color_palettes.html
-[S] https://stackoverflow.com/questions/49039581/matplotlib-savefig-will-not-overwrite-old-files
-[T] https://seaborn.pydata.org/generated/seaborn.distplot.html
-[U] https://seaborn.pydata.org/generated/seaborn.scatterplot.html
-[V] https://www.w3schools.com/python/numpy_creating_arrays.asp
-[W] https://www.programcreek.com/python/example/102210/numpy.count_nonzero
-[X] https://medium.com/@rishav.jnit/exploratory-data-analysis-eda-on-iris-dataset-using-python-cadd850c1fc6
-[Y] https://www.kaggle.com/playingmyway/eda-of-iris-dataset
-[Z] https://chrisalbon.com/python/data_wrangling/pandas_create_column_with_loop/
+* [A] https://stackoverflow.com/questions/29645153/remove-name-dtype-from-pandas-output
+* [B]https://stackoverflow.com/questions/26266362/how-to-count-the-nan-values-in-a-column-in-pandas-dataframe
+* [C] https://pandas.pydata.org/pandas-docs/version/0.17.1/generated/pandas.DataFrame.describe.html
+* [D] https://www.dataquest.io/blog/pandas-cheat-sheet
+* [E] https://www.shanelynn.ie/summarising-aggregation-and-grouping-data-in-python-pandas/
+* [F] https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html
+* [G] https://www.python-course.eu/pandas_data_files.php
+* [H] https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.round.html
+* [I] https://www.geeksforgeeks.org/python-pandas-dataframe-corr/
+* [J] https://www.w3schools.com/python/python_functions.asp
+* [K] https://thispointer.com/how-to-append-text-or-lines-to-a-file-in-python/
+* [L] https://stackoverflow.com/questions/17530542/how-to-add-pandas-data-to-an-existing-csv-file
+* [M] https://stackoverflow.com/questions/23231605/convert-pandas-dataframe-to-csv-string/
+* [N] https://stackoverflow.com/questions/3348460/csv-file-written-with-python-has-blank-lines-between-each-row
+* [O] https://stackoverflow.com/questions/29645153/remove-name-dtype-from-pandas-output
+* [P] https://seaborn.pydata.org/generated/seaborn.pairplot.html
+* [Q] https://seaborn.pydata.org/generated/seaborn.heatmap.html
+* [R] https://seaborn.pydata.org/tutorial/color_palettes.html
+* [S] https://stackoverflow.com/questions/49039581/matplotlib-savefig-will-not-overwrite-old-files
+* [T] https://seaborn.pydata.org/generated/seaborn.distplot.html
+* [U] https://seaborn.pydata.org/generated/seaborn.scatterplot.html
+* [V] https://www.w3schools.com/python/numpy_creating_arrays.asp
+* [W] https://www.programcreek.com/python/example/102210/numpy.count_nonzero
+* [X] https://medium.com/@rishav.jnit/exploratory-data-analysis-eda-on-iris-dataset-using-python-cadd850c1fc6
+* [Y] https://www.kaggle.com/playingmyway/eda-of-iris-dataset
+* [Z] https://chrisalbon.com/python/data_wrangling/pandas_create_column_with_loop/
 
 ***
 ### Figures
 
-1. Iris Flower
-2. Iris Variants
-3. Raw Data
-4. Dataset Overview
-5. Pairplot
-6. Heatmap
-7. Sepal width:sepal length Scatterplot
-8. Petal width: petal length Scatterplot
-9. Sepal length: petal length Scatterplot
-10. Sepal Length petal width Scatterplot
-11. Sepal length Histogram
-12. Sepal width Histogram
-13. Petal length Histogram
-14. Petal width Histogram
-15. Setosa PDF CDF Graph
-16. Versicolor PDF CDF Graph
-17. Virginica PDF CDF Graph
-18. Overall PDF CDF Graph
+* 1. Iris Flower
+* 2. Iris Variants
+* 3. Raw Data
+* 4. Dataset Overview
+* 5. Pairplot
+* 6. Heatmap
+* 7. Sepal width:sepal length Scatterplot
+* 8. Petal width: petal length Scatterplot
+* 9. Sepal length: petal length Scatterplot
+* 10. Sepal Length petal width Scatterplot
+* 11. Sepal length Histogram
+* 12. Sepal width Histogram
+* 13. Petal length Histogram
+* 14. Petal width Histogram
+* 15. Setosa PDF CDF Graph
+* 16. Versicolor PDF CDF Graph
+* 17. Virginica PDF CDF Graph
+* 18. Overall PDF CDF Graph
 
