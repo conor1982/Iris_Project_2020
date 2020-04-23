@@ -53,7 +53,7 @@ plt.close()
 #Hist Function
 def makehist(x):
     hist = sns.FacetGrid(df,hue="species",height=6) \
-        .map(sns.distplot,x) \
+        .map(sns.distplot,x, bins=5) \
         .add_legend()
     #plt.title(x)
     plt.savefig("Histogram of {}".format(x))
