@@ -14,7 +14,6 @@ Programming and Scripting Module Final Project
 
 ***
 ## Background information on the Data
-(what is the data, who collected it, how it was collected, uses today?)
 
 ### Overview of Irish Data Set
 The Iris data set  is a multivariate data set introduced by the British statistician and biologist Ronald Fisher in his 1936 paper The use of multiple measurements in taxonomic problems as an example of linear discriminant analysis. [1]
@@ -56,10 +55,10 @@ Previous studies on the data set show that Iris Setosa is easily seperable from 
 
 ### Instructions: How to Run
 
-* Analysis.py can be ran from the command line. 
+* Analysis.py can be run from the command line. 
 * The Irisdata set must be entered as an argument on the command line also.
 * The Iris Data set must be in the same folder you are running the command from.
-* All graphical outputs and summary tables will appear in this folder once ran.
+* All graphical outputs and summary tables will appear in the same folder where program is run.
 * If the incorrect file name is entered or the file does not exisit within the relevant folder, the user will recieve an error message i.e. *'File not Found'*
 
 ### Programming Language
@@ -109,7 +108,7 @@ df.columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'spe
 ```
 ### Overview of Data
 
-In researching the dataset, it is undertood that their is 150 rows of data. The variable measurements are in CM and there is three variants (species) of Iris in the dataset. 
+In researching the dataset, it is undertood that their are 150 rows of data. The variable measurements are in CM and there are three variants (species) of Iris in the dataset. 
 
 I felt it useful to create an overview of the dataset in Python. This included:
    
@@ -156,13 +155,13 @@ print(df.describe())
 ##### Fig 4
 ![Dataset Overview](https://github.com/conor1982/Iris_Project_2020/blob/master/Screenshots/iris_dataset_overview.png)
 
-Through this overview, a good understanding of the actual dataset can be obtained. The first and last 5 rows, will gve a useful look of what a row contains. The shape of the dataset being 150 ros and 5 columns matches what was gathered during researching the data. 
+Through this overview, a good understanding of the actual dataset can be obtained. The first and last 5 rows, will gve a useful look of what a row contains. The shape of the dataset being 150 rows and 5 columns matches what was gathered during researching the data. 
 
 The datatypes are also an important element of the dataset to understand. Here we see the four different variables as float numbers and the species a string value. There was also no null values in this dataset.
 
 Understanding each element of this gave me confidence that the dataset downloaded for the project was of good integrity.
 
-One further check was running the pandas.describe function. The results from this were compared with other summarries found online. There were no discrepencies found in any of the datasets used in the comparison [8] [9].
+One further check was running the *pandas.describe* function. The results from this were compared with other summarries found online. There were no discrepencies found in any of the datasets used in the comparison [8] [9].
 
 ***
 ## Summary Statistics
@@ -313,7 +312,7 @@ correlation = df.corr().round(2)
 ```
 ### Summary Text File creation
 
-Each summary was outputted into a single *.txt* file. A function was created for this task with the funtion parameters including: [11] [12] [13]
+Each summary is outputted to a single *.txt* file. A function was created for this task with the funtion parameters including: [11] [12] [13]
 
 * mode type: either writing or appending to *.txt* file
 * heading: slice a list for what summary heading to use
@@ -387,13 +386,13 @@ This Heatmap is an excellent graphical representaion of Table 10 as seen earlier
 
 *The range of correlation coeffiecent values run from -1.0 to 1.0 where -1.0 indicates a perfect negative correaltion and 1.0 indicates a perfrect positive correaltion [14] The closer to these figures indicates a strong correlation.* With a value of 0.96, petal length and petal width have a very strong positive correlation.
 
-The strength of association according to guidleines intrepreting Pearsons's correlation would be *Large* [] 
+The strength of association according to guidleines intrepreting Pearsons's correlation would be *Large* [14] 
 
 ### Scatterplots
 
 *A scatterplot is a type of data display that shows the relationship between two numerical variables. Each member of the dataset gets plotted as a point whose (x, y)(x,y)left parenthesis, x, comma, y, right parenthesis coordinates relates to its values for the two variables.* [16]
 
-Scatterplots are a 2d representaion of each variable together. We can use these to attempt to draw a line between each Iris species. Those that look seperable more linearly will be more useful in identifying what pair of variables are most useful together.
+Scatterplots are a 2d representaion of each variable together. We can use these to attempt to draw a line between each Iris species. Those that look separable more linearly will be more useful in identifying what pair of variables are most useful together.
 
 A scatterplot was created for each pair of variables. A function was created with the function parameter being the variable x and variable y i.e. sepal width, petal length. This allowed for more efficent coding when creating scatter plots for each variable.
 
@@ -492,7 +491,7 @@ Creating a basic model: [20]
 
 * if petal length < 2.1 then Setosa - this would have 100% accuracy
 * if petal length >2.1 and <= 4.8 the Versilcolor - this would be accuarate for 92%
-* if peral length > 4.8 then Virginica - this would be accurate for 94% 
+* if petal length > 4.8 then Virginica - this would be accurate for 94% 
 
 The above shows how using Histograms can be very useful when creating an initial high level model for identifying species type in this dataset.
 
@@ -543,14 +542,65 @@ We can obseve from the Histogram that Setosa is easily seperable while there is 
 
 *DF(X) generates a probability mass function or density function according to whether it thinks «X» is discrete or continuous. CDF(x) does the same, generating a cumulative mass or cumulative probability function. If «X» contains text values it knows «X» must be discrete. If «X» contains numbers with few or no identical values, it guesses continuous. If «X» contains numbers with many identical values, it guesses discrete.*
 
-
 The PDF and CDF are very common techniques in exploratory data analysis. The CDF is cumulative sum of the PDF over a defined interval. After observing the Histograms above, the petal length histogram will be used in the PDF and CDF analysis.
 
 #### Code example
 
 
 ```python
+#PDF CDF
+# [X] https://medium.com/@rishav.jnit/exploratory-data-analysis-eda-on-iris-dataset-using-python-cadd850c1fc6
+# [Y] https://www.kaggle.com/playingmyway/eda-of-iris-dataset
 
+#pdf numpy array/sum numpy array
+set_pl_pdf = set_pl/sum(set_pl) 
+#cdf numpy cumsum function
+set_pl_cdf = np.cumsum(set_pl_pdf)
+
+versi_pl_pdf = versi_pl/sum(versi_pl) 
+versi_pl_cdf = np.cumsum(versi_pl_pdf)
+
+vir_pl_pdf = vir_pl/sum(vir_pl) 
+vir_pl_cdf = np.cumsum(vir_pl_pdf)
+
+#Function to creat PDF CDF graph
+# ref [X]
+# ref [Y]
+def cdf_pdf(variant,variable):
+    #filter the dataframe by species
+    x=df[df['species']==variant]
+    
+    #variables to create a count for PDF calc and variable for graph with 10 bins  
+    graph = counts, bin_edges= np.histogram(x[variable],bins=10, density= True)
+    
+    #pdf calc
+    pdf=counts/(sum(counts))
+
+    #cdf calc
+    cdf=np.cumsum(pdf)
+
+    #plot PDF line
+    plt.plot(bin_edges[1:],pdf, label='{} PDF'.format(variant))
+    
+    #plot CDF line
+    plt.plot(bin_edges[1:],cdf, label=' {} CDF'.format(variant))
+    
+    #apply a grid
+    plt.grid()
+    
+    #apply legend in best fit 'loc = 0'
+    plt.legend(loc =0)
+
+    #save plot
+    plt.savefig('CDF and PDF')
+    return graph
+
+#function calls on each variant and variable
+# plots all three functions on one plot
+# plt.close() not included in function for this reason  
+set_pl_cdf_pdf = cdf_pdf('Iris-setosa','petal_length')
+ver_pl_cdf_pdf = cdf_pdf('Iris-versicolor','petal_length')
+vir_pl_cdf_pdf = cdf_pdf('Iris-virginica','petal_length')
 ```
 #### Setosa
 
@@ -581,29 +631,190 @@ We can observe from this Graph that: [19]
 ***
 ## Summary and Conclusion
 
+### Learning Outcomes
+
+#### Python
+
+This project was an excellet learning curve into programming particulary Python. Having never used Pyhon before January 2020, this project offered the opportunity in particular to utilise the key Python libaries used for Data Analysis.
+
+Getting to research and adopt some functions of the Pandas libary for this project was very interesting. Although still a bit to learn and making my code more streamlined, I feel I have the confidence now to apply some techniques leanred from Pandas in my current role.
+
+Also, using Matplotlib and especially Seaborn opened up the incredible graphical and visualisation options on offer. This project was a great opportunity to discover and some of these functions.
+
+#### Github
+
+Prior to starting this course I was unaware of Github. Having the opportunity to work with it is something I will continue to use and will begin to implement in my current role. While doing the *README* file, learning about Markdown language was extremely beneficial
+
+Also, as advised in the project documentation, breaking up this project into smaller parts was very important. Github allowed me to keep track of an initial project plan. Breaking it up into smaller sections definitely helped with the programming side rather than try and do it all together.
+
+### Iris data
+
+#### Analysis
+
+As stated before and noted during research, the iris data set is a very popular dataset particularly in the teaching of data analyis and machine learning. Utilising the power of Python to create an exploratory analysis of the dataset was a the biggest learning outcome. 
+
+The next step will be learning and applying more statistical machine learning based approach to develop and apply more robust models for predicting and forecsating.
+
+In this project, observations from histograms, scatterplots and density plots allowed me to create some basic control flow arguments that identify an Iris species based on a particular value. 
+
+From the observations and research, petal length was the best variable to create some models. While these might be somewhat useful as a basic predictor, as I move further along this course, I will develop more skills to adopt more mathematical and statistical functions and techniques.
+
+
+
+##### Code example
+
+```python
+# Section on creating basic models
+print('\nUnivariate Analysis of Petal Length based on Histograms Observations')
+
+#values based on Histogram Analysis
+#model values to return % accuracy
+max_set_pl = 2.1
+max_versi_pl = 4.8
+max_vir_pl = 4.8
+
+#variable to see how many values in the numpy array meet the values in relative variables directly above
+setosa_pred = np.count_nonzero(set_pl[:]<max_set_pl)
+#prints message on the number of variants identified applying the values above
+#count non_zero used for aggregating numpy array
+#[W] https://www.programcreek.com/python/example/102210/numpy.count_nonzero
+print("Applying {} as the maximum petal length to identify a Setosa Flower predicts {} Setosas".format(max_set_pl,setosa_pred))
+
+#as above
+versicolor_pred = np.count_nonzero(versi_pl[:]<max_versi_pl)
+print("Applying {} as the maximum petal length to identify a Versicolor Flower predicts {} Versicolors".format(max_versi_pl,versicolor_pred))
+
+#as above
+virginica_pred = np.count_nonzero(vir_pl[:]>=max_vir_pl)
+print("Applying {} as the minimum petal length to identify a Viriginica Flower would predicts {} Virginicas".format(max_vir_pl,virginica_pred))
+
+
+#PDF CDF
+# [X] https://medium.com/@rishav.jnit/exploratory-data-analysis-eda-on-iris-dataset-using-python-cadd850c1fc6
+# [Y] https://www.kaggle.com/playingmyway/eda-of-iris-dataset
+
+#pdf numpy array/sum numpy array
+set_pl_pdf = set_pl/sum(set_pl) 
+#cdf numpy cumsum function
+set_pl_cdf = np.cumsum(set_pl_pdf)
+
+versi_pl_pdf = versi_pl/sum(versi_pl) 
+versi_pl_cdf = np.cumsum(versi_pl_pdf)
+
+vir_pl_pdf = vir_pl/sum(vir_pl) 
+vir_pl_cdf = np.cumsum(vir_pl_pdf)
+
+#Function to creat PDF CDF graph
+# ref [X]
+# ref [Y]
+def cdf_pdf(variant,variable):
+    #filter the dataframe by species
+    x=df[df['species']==variant]
+    
+    #variables to create a count for PDF calc and variable for graph with 10 bins  
+    graph = counts, bin_edges= np.histogram(x[variable],bins=10, density= True)
+    
+    #pdf calc
+    pdf=counts/(sum(counts))
+
+    #cdf calc
+    cdf=np.cumsum(pdf)
+
+    #plot PDF line
+    plt.plot(bin_edges[1:],pdf, label='{} PDF'.format(variant))
+    
+    #plot CDF line
+    plt.plot(bin_edges[1:],cdf, label=' {} CDF'.format(variant))
+    
+    #apply a grid
+    plt.grid()
+    
+    #apply legend in best fit 'loc = 0'
+    plt.legend(loc =0)
+
+    #save plot
+    plt.savefig('CDF and PDF')
+    return graph
+
+#function calls on each variant and variable
+# plots all three functions on one plot
+# plt.close() not included in function for this reason  
+set_pl_cdf_pdf = cdf_pdf('Iris-setosa','petal_length')
+ver_pl_cdf_pdf = cdf_pdf('Iris-versicolor','petal_length')
+vir_pl_cdf_pdf = cdf_pdf('Iris-virginica','petal_length')
+
+
+print('\nModel of Petal Length based on PDF and CDF Observations')
+
+#approx values from PDF CDF graph
+# visual of intersect between variants
+cdf_set_pred = 1.9
+cdf_vir_versi_sep = 5
+
+#list for loop results append
+# Andrew beatty Lab 4 control flow - numbers problem
+Pred = []
+
+#[Z] https://chrisalbon.com/python/data_wrangling/pandas_create_column_with_loop/
+
+#open of loop to run through petal length data
+for row in df['petal_length']:
+    
+    #control flow if and elif 
+    if row <= cdf_set_pred:
+       #append condition to the list above
+       #condition true apply relative text
+       Pred.append("Predicted Setosa")
+    elif row>cdf_set_pred and row <cdf_vir_versi_sep:
+        Pred.append('Predicted Versicolor')
+    elif row>=cdf_vir_versi_sep:
+        Pred.append('Predicted Virginica')
+
+# count number of times each condition from foor loop result appears on list
+set_pred =Pred.count('Predicted Setosa')
+ver_pred =Pred.count('Predicted Versicolor')
+vir_pred =Pred.count('Predicted Virginica')
+
+#variables to create % value of prediction
+set_acc = (set_pred-50)/50
+ver_acc = (ver_pred-50)/50
+vir_acc= (vir_pred-50)/50
+
+
+#prints out message of how any of each variants were identified apply CDF observations
+print("Applying {} as the maximum petal length to identify a Setosa Flower predicts {} Setosas".format(cdf_set_pred,set_pred))
+print("Applying {} as the maximum petal length to identify a Versicolor Flower predicts {} Versicolors".format(cdf_vir_versi_sep,ver_pred))
+print("Applying {} as the minimum petal length to identify a Viriginca Flower predicts {} Virginicas".format(cdf_vir_versi_sep,vir_pred))
+
+#prints error rate of predictions
+print("\n",set_acc, 'error rate for Setosa')
+print(ver_acc, 'error rate for Versicolor')
+print(vir_acc, 'error rate for Virginica')
+```
+
 ***
 ### References
 
-* 1. https://en.wikipedia.org/wiki/Iris_flower_data_set
-* 2. https://towardsdatascience.com/an-introduction-to-multivariate-data-analysis-ece93ceb1ed3
-* 3. https://archive.ics.uci.edu/ml/datasets/iris
-* 4. https://medium.com/codebagng/basic-analysis-of-the-iris-data-set-using-python-2995618a6342
-* 5. https://towardsdatascience.com/what-why-and-how-to-read-empirical-cdf-123e2b922480
-* 6. https://www.kaggle.com/playingmyway/eda-of-iris-dataset
-* 7. https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html
-* 8. https://medium.com/@harimittapalli/exploratory-data-analysis-iris-dataset-9920ea439a3e
-* 9. https://www.researchgate.net/figure/Example-summary-statistics-for-the-Iris-data_fig4_26387272
-* 10. https://www.tablesgenerator.com/markdown_tables
-* 11. https://www.w3schools.com/python/python_functions.asp
-* 12. https://stackoverflow.com/questions/17530542/how-to-add-pandas-data-to-an-existing-csv-file
-* 13. https://stackoverflow.com/questions/23231605/convert-pandas-dataframe-to-csv-string
-* 14. https://statistics.laerd.com/statistical-guides/pearson-correlation-coefficient-statistical-guide.php
-* 15. https://statistics.laerd.com/statistical-guides/understanding-histograms.php
-* 16. https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data/introduction-to-scatterplots/a/scatterplots-and-correlation-review
-* 17. https://www.investopedia.com/terms/p/pdf.asp
-* 18. https://wiki.analytica.com/Cdf_and_Pdf_Functions
-* 19. https://www.youtube.com/watch?v=hCBr43Wv_Es
-* 20. https://www.youtube.com/watch?v=11BFX7Ygtyo
+1. https://en.wikipedia.org/wiki/Iris_flower_data_set
+2. https://towardsdatascience.com/an-introduction-to-multivariate-data-analysis-ece93ceb1ed3
+3. https://archive.ics.uci.edu/ml/datasets/iris
+4. https://medium.com/codebagng/basic-analysis-of-the-iris-data-set-using-python-2995618a6342
+5. https://towardsdatascience.com/what-why-and-how-to-read-empirical-cdf-123e2b922480
+6. https://www.kaggle.com/playingmyway/eda-of-iris-dataset
+7. https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html
+8. https://medium.com/@harimittapalli/exploratory-data-analysis-iris-dataset-9920ea439a3e
+9. https://www.researchgate.net/figure/Example-summary-statistics-for-the-Iris-data_fig4_26387272
+10. https://www.tablesgenerator.com/markdown_tables
+11. https://www.w3schools.com/python/python_functions.asp
+12. https://stackoverflow.com/questions/17530542/how-to-add-pandas-data-to-an-existing-csv-file
+13. https://stackoverflow.com/questions/23231605/convert-pandas-dataframe-to-csv-string
+14. https://statistics.laerd.com/statistical-guides/pearson-correlation-coefficient-statistical-guide.php
+15. https://statistics.laerd.com/statistical-guides/understanding-histograms.php
+16. https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data/introduction-to-scatterplots/a/scatterplots-and-correlation-review
+17. https://www.investopedia.com/terms/p/pdf.asp
+18. https://wiki.analytica.com/Cdf_and_Pdf_Functions
+19. https://www.youtube.com/watch?v=hCBr43Wv_Es
+20. https://www.youtube.com/watch?v=11BFX7Ygtyo
 
 ***
 ### References in Code
@@ -638,22 +849,22 @@ We can observe from this Graph that: [19]
 ***
 ### Figures
 
-* 1. Iris Flower
-* 2. Iris Variants
-* 3. Raw Data
-* 4. Dataset Overview
-* 5. Pairplot
-* 6. Heatmap
-* 7. Sepal width:sepal length Scatterplot
-* 8. Petal width: petal length Scatterplot
-* 9. Sepal length: petal length Scatterplot
-* 10. Sepal Length petal width Scatterplot
-* 11. Sepal length Histogram
-* 12. Sepal width Histogram
-* 13. Petal length Histogram
-* 14. Petal width Histogram
-* 15. Setosa PDF CDF Graph
-* 16. Versicolor PDF CDF Graph
-* 17. Virginica PDF CDF Graph
-* 18. Overall PDF CDF Graph
+1. Iris Flower
+2. Iris Variants
+3. Raw Data
+4. Dataset Overview
+5. Pairplot
+6. Heatmap
+7. Sepal width:sepal length Scatterplot
+8. Petal width: petal length Scatterplot
+9. Sepal length: petal length Scatterplot
+10. Sepal Length petal width Scatterplot
+11. Sepal length Histogram
+12. Sepal width Histogram
+13. Petal length Histogram
+14. Petal width Histogram
+15. Setosa PDF CDF Graph
+16. Versicolor PDF CDF Graph
+17. Virginica PDF CDF Graph
+18. Overall PDF CDF Graph
 
