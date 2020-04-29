@@ -33,6 +33,7 @@ sns.set(style = 'ticks', color_codes=True)
 sns.pairplot(df,hue = 'species')
 #save plot name
 plt.savefig("Pairplot of Iris Data")
+plt.close()
 
 #pairplot petal width and petal length
 sns.set(style = 'ticks', color_codes=True)
