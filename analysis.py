@@ -1,4 +1,8 @@
-#Pandas libary import
+#Conor O'Riordan
+#pands-project 2020
+#Iris Dateset
+
+#Libary imports
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -6,8 +10,6 @@ import numpy as np
 import sys
 
 
-#ref https://www.shanelynn.ie/summarising-aggregation-and-grouping-data-in-python-pandas/
-#ref https://www.shanelynn.ie/using-pandas-dataframe-creating-editing-viewing-data-in-python/
 
 #iris data downloaded from http://archive.ics.uci.edu/ml/machine-learning-databases/iris/
 
@@ -337,7 +339,7 @@ print("Applying {} as the maximum petal length to identify a Versicolor Flower p
 
 #as above
 virginica_pred = np.count_nonzero(vir_pl[:]>=max_vir_pl)
-print("Applying {} as the minimum petal length to identify a Viriginica Flower would predicts {} Virginicas".format(max_vir_pl,virginica_pred))
+print("Applying {} as the minimum petal length to identify a Viriginica Flower predicts {} Virginicas".format(max_vir_pl,virginica_pred))
 
 
 #PDF CDF
@@ -441,7 +443,6 @@ print("Applying {} as the minimum petal length to identify a Viriginca Flower pr
 print("\n",set_acc, 'error rate for Setosa')
 print(ver_acc, 'error rate for Versicolor')
 print(vir_acc, 'error rate for Virginica')
-
 
 
 
