@@ -4,8 +4,8 @@ Programming and Scripting Module Final Project
 ***
 ## Objectives of Project
 1.	Research the Dataset: Background information on the dataset with a summary.
-2.	Download Data and upload into Github
-3.	Summary of Programming Language used and libraries utlised.
+2.	Download of Data and upload into Github
+3.	Summary of programming language used and libraries utilised.
 4.	Summarise statistics of the Data
 5.	Histogram of each variable
 6.	Scatter plots of each variable
@@ -16,14 +16,14 @@ Programming and Scripting Module Final Project
 ## Background information on the Data
 
 ### Overview of Irish Data Set
-The Iris data set  is a multivariate data set introduced by the British statistician and biologist Ronald Fisher in his 1936 paper The use of multiple measurements in taxonomic problems as an example of linear discriminant analysis. [1]
+The Iris dataset is a multivariate data set introduced by the British statistician and biologist Ronald Fisher in his 1936 paper The use of multiple measurements in taxonomic problems as an example of linear discriminant analysis. [1]
 
 ##### Fig 1
 ![Iris Flower](https://github.com/conor1982/Iris_Project_2020/blob/master/Screenshots/iris.png)
 
 It is sometimes called Anderson’s Iris data set because Edgar Anderson collected the data to quantify the morphologic variation of Iris flowers of three related species. Two of the three species were collected in the Gaspé Peninsula *“all from the same pasture, and picked on the same day and measured at the same time by the same person with the same apparatus”*. [1] [4]
 
-Multivariate (Data analysis) refers to any statistical technique used to analyze data which arises from more than one variable. 
+Multivariate (Data analysis) refers to any statistical technique used to analyse data which arises from more than one variable. 
 
 *Multivariate data analysis is a set of statistical models that examine patterns in multidimensional data by considering, at once, several data variables. It is an expansion of bivariate data analysis, which considers only two variables in its models. As multivariate models consider more variables, they can examine more complex phenomena and find data patterns that more accurately represent the real world.* [2]
 
@@ -46,44 +46,44 @@ For each variant, data was gathered based on four different attributes: [2]
 
 The dataset contains a set of 150 records. Each row in the table represents one Iris flower with a measurement of each attribute above and its relative variant.
 
-There are 50 different data points for each variant of Iris. With the complete dataset containing only 150 observations, it is a very popular dataset in teaching and study. It contains real data of good quality which is viewed more favourably than using test data for instance.
+There are 50 different data points for each variant of Iris. With the complete dataset containing only 150 observations, it is a very popular dataset in the teaching and study of Data Analysis and machine Learning. It contains *real* data of good quality which is viewed more favourably than using test data for instance.
 
-Previous studies on the data set show that Iris Setosa is easily seperable from the other two linearly. There is some overlap between the other two making it more difficult to distinguish from each other. [3] This will be demonstrated in this project through the use of various Visualisation techniques. We will aslo show using the Cumulative Distribution Fucntion (CDF) how an initial simple model with fairly high accuracy can be created through initial Exploratory Data Analysis [5] [6]. 
+Previous studies on the data set show that Iris Setosa is easily separable linearly from the other two variants. There is some overlap between the other two making it more difficult to distinguish from each other. [3] This will be demonstrated in this project through the use of various visualisation techniques. We will also show using the Cumulative Distribution Function (CDF) how an initial simple model with fairly high accuracy can be created through initial Exploratory Data Analysis [5] [6]. 
 
 ***
-## How to Run and Python Libaries used
+## How to Run and Python Libraries used
 
 ### Instructions: How to Run
 
-* Analysis.py can be run from the command line. 
-* The Irisdata set must be entered as an argument on the command line also.
-* The Iris Data set must be in the same folder you are running the command from.
+* Analysis.py can be run from the command line e.g (Cmder, Command Prompt)
+* The Iris dataset must be entered as an argument on the command line e.g *python analysis.py irisdata.csv*
+* The Iris dataset must be in the same folder you are running the command from.
 * All graphical outputs and summary tables will appear in the same folder where program is run.
-* If the incorrect file name is entered or the file does not exisit within the relevant folder, the user will recieve an error message i.e. *'File not Found'*
+* If the incorrect file name is entered or the file does not exist within the relevant folder, the user will receive an error message i.e. *'File not Found'*
 
 ### Programming Language
 * Python was used in this project
 * Python version used *Python3.7.6*
-* Program developed in Microsoft Visual Studio
+* Coding developed in Microsoft Visual Studio
 
-### Python Libaries
+### Python Libraries
 
 #### Pandas
-* imported alias *Pandas as pd*
+* imported with alias *Pandas as pd*
 * extensively used in this project
-* popular libary for data analysis and data manipulation
+* popular library for data analysis and data manipulation
 
 #### Numpy
-* imported alias *Numpy as np*
+* imported with alias *Numpy as np*
 * allows to create extensive arrays and matrices
 
 #### matplotlib
-* imported alias *Matplotlib.pyplot as plt*
+* imported with alias *Matplotlib.pyplot as plt*
 * numerical extension to Numpy
 * Extensive plotting tools
 
 #### Seaborn
-* imported alias *Seaborn as sns*
+* imported with alias *Seaborn as sns*
 * Seaborn is a Python visualization library based on matplotlib
 * Provides excellent graphical visualisations
 * Provides a higher level of visualisation than Matplotlib
@@ -96,28 +96,28 @@ Previous studies on the data set show that Iris Setosa is easily seperable from 
 
 ### Source of Data
 
-The dataset used in this project was downloaded from the UCI Machine Learning Repository website [3]. Once downloaded it was added to my Github Repsository. Using the Pandas libary in Python a number of checks were conducted to sense check the version of the imported iris data. [7]
+The dataset used in this project was downloaded from the UCI Machine Learning Repository website [3]. Once downloaded it was added to my Github Repsository. Using the Pandas library, a number of checks were conducted to sense check the imported version of the dataset. [7]
 
 ##### Fig 3
 ![Pic of Raw Data](https://github.com/conor1982/Iris_Project_2020/blob/master/Screenshots/iris_raw_data.png)
 
-We can see from Fig 1 that heading needed to be added to this data source. The columns were given the names : sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species'.
+We can see from Fig 1 that a heading needed to be added to the data source. The columns were given the names : sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species'.
 
 ```python
 df.columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
 ```
 ### Overview of Data
 
-In researching the dataset, it is undertood that their are 150 rows of data. The variable measurements are in CM and there are three variants (species) of Iris in the dataset. 
+In researching the dataset, it is understood that there are 150 rows of data. The variable measurements are in CM and there are three variants (species) of Iris in the dataset. 
 
 I felt it useful to create an overview of the dataset in Python. This included:
    
-    1 First 5 and last 5 rows of the Dataset
-    2 Shape of the Dataset
-    3 Dimensions of Dataset
-    4 Data Types
-    5 Count of Species variants
-    6 Count of null values
+    1. First 5 and last 5 rows of the Dataset
+    2. Shape of the Dataset
+    3. Dimensions of Dataset
+    4. Data Types
+    5. Count of Species variants
+    6. Count of null values
 
 ```python
 #first 5 lines of dataset
@@ -155,20 +155,20 @@ print(df.describe())
 ##### Fig 4
 ![Dataset Overview](https://github.com/conor1982/Iris_Project_2020/blob/master/Screenshots/iris_dataset_overview.png)
 
-Through this overview, a good understanding of the actual dataset can be obtained. The first and last 5 rows, will gve a useful look of what a row contains. The shape of the dataset being 150 rows and 5 columns matches what was gathered during researching the data. 
+This overview provided a good understanding of the dataset. The first and last 5 rows, give a useful look of what a row of data looks like. The shape of the dataset being 150 rows and 5 columns matches what was gathered during researching the data. 
 
 The datatypes are also an important element of the dataset to understand. Here we see the four different variables as float numbers and the species a string value. There was also no null values in this dataset.
 
 Understanding each element of this gave me confidence that the dataset downloaded for the project was of good integrity.
 
-One further check was running the *pandas.describe* function. The results from this were compared with other summarries found online. There were no discrepencies found in any of the datasets used in the comparison [8] [9].
+One further check was running the *pandas.describe* function. The results from this were compared with other summaries found online. There were no discrepancies found in any of the datasets used in the comparison [8] [9].
 
 ***
 ## Summary Statistics
 
-Again utilising the Pandas libary, summary statistics tables were created. One for the overall data set and one for each variable by species type. The range was also calculate for each variable by species type. Finally a correlation matrix was created for each variable. All summaries were rounded to two decimel places.
+Again utilising the Pandas library, summary statistics tables were created. There was an overall summary created and one for each variable by species type. The range was also calculate for each variable by species type. Finally a correlation matrix was created for each variable. All summaries were rounded to two decimal places.
 
-To create a summary by variable the *.pivot* function was used in pandas. Although it does not support aggregation, I felt it worked well to use with the *.describe()* [7].
+To create a summary by variable the *.pivot* function was used in pandas. Although it does not support aggregation, it worked well to create the variable summary tables by variant. [7].
 
 ### Table 1 - Overall Summary Stats
 
@@ -288,6 +288,9 @@ To create a summary by variable the *.pivot* function was used in pandas. Althou
 | petal_length 	| 0.87         	| -0.42       	| 1.0          	| 0.96        	|
 | petal_width  	| 0.82         	| -0.36       	| 0.96         	| 1.0         	|
 
+* Very strong positive correlation between petal length and petal width (0.96)
+* Very strong positive correlation between sepal length and petal length (0.87)
+
 
 #### Example of code for Summary Tables
 
@@ -312,11 +315,11 @@ correlation = df.corr().round(2)
 ```
 ### Summary Text File creation
 
-Each summary is outputted to a single *.txt* file. A function was created for this task with the funtion parameters including: [11] [12] [13]
+Each summary is outputted to a single *.txt* file. A function was created to produce the summaries. The function parameters including: [11] [12] [13]
 
 * mode type: either writing or appending to *.txt* file
 * heading: slice a list for what summary heading to use
-* heading type: selecte a different header for either overall summary or by variable
+* heading type: select a different header for either overall summary or by variable
 * irisvar: what summary to write/append to the *.txt* file
 
 #### Example of Code for Summary file creation
@@ -371,30 +374,32 @@ createtxtfile('a',7,corr_header,covariance)
 ##### Fig 5
 ![Pairplot](https://github.com/conor1982/Iris_Project_2020/blob/master/Screenshots/Pairplot%20of%20Iris%20Data.png)
 
-Beacuse of the multivariate nature of the data set, a pairplot is a useful way to view the bivarariate relation between all variables in one place. 
+Because of the multivariate nature of the data set, a pairplot is a useful way to view the bivariate relation between all variables in one place.
 
-From the pairplot, petal width and petal length look like the best features to use to identify species type. Setosa is very separate while Versicolor and Viriginica have some overlap.
+In all plots, Setosa is easily identied from the other two species. 
 
-Sepal width and sepal length are not easily seperable from each other and contains quite alot of overlap of features.
+Petal width and petal length look linearly separable. They look like the best features to use to identify species type. Setosa is very separate while Versicolor and Viriginica have some overlap.
+
+Looking at sepal width and sepal length, Verotsa and Viriginica are not easily separable from each other and we can observe a lot of overlap between the two.
 
 ### Heatmap
 
 ##### Fig 6
 ![Heatmap](https://github.com/conor1982/Iris_Project_2020/blob/master/Screenshots/Heat%20Map.png)
 
-This Heatmap is an excellent graphical representaion of Table 10 as seen earlier. This correaltion matrix again shows a very positive correlation of 0.96 between petal width and length. There also appears to be a strong correaltion between sepal length and petal length also 0.87.
+This Heatmap is an excellent graphical representation of Table 10 as seen earlier. This correlation  matrix again shows a very positive correlation of 0.96 between petal width and length. There also appears to be a strong correlation  between sepal length and petal length also 0.87.
 
-*The range of correlation coeffiecent values run from -1.0 to 1.0 where -1.0 indicates a perfect negative correaltion and 1.0 indicates a perfrect positive correaltion [14] The closer to these figures indicates a strong correlation.* With a value of 0.96, petal length and petal width have a very strong positive correlation.
+*The range of correlation coefficient values run from -1.0 to 1.0 where -1.0 indicates a perfect negative correaltion and 1.0 indicates a perfect positive correlation [14] The closer to these figures indicates a strong correlation.* With a value of 0.96, petal length and petal width have a very strong positive correlation.
 
-The strength of association according to guidleines intrepreting Pearsons's correlation would be *Large* [14] 
+The strength of association according to guidelines interpreting Pearsons's correlation would be *Large* [14] 
 
 ### Scatterplots
 
 *A scatterplot is a type of data display that shows the relationship between two numerical variables. Each member of the dataset gets plotted as a point whose (x, y)(x,y)left parenthesis, x, comma, y, right parenthesis coordinates relates to its values for the two variables.* [16]
 
-Scatterplots are a 2d representaion of each variable together. We can use these to attempt to draw a line between each Iris species. Those that look separable more linearly will be more useful in identifying what pair of variables are most useful together.
+Scatterplots are a 2d representation of each variable together. We can use these to attempt to draw a line between each Iris species. Those that look separable more linearly will be more useful in identifying what pair of variables are most useful together.
 
-A scatterplot was created for each pair of variables. A function was created with the function parameter being the variable x and variable y i.e. sepal width, petal length. This allowed for more efficent coding when creating scatter plots for each variable.
+A scatterplot was created for each pair of variables. A function was created with the function parameter being the variable x and variable y i.e. sepal width, petal length. This allowed for more efficient coding when creating scatter plots for each variable.
 
 #### Code example
 
@@ -422,16 +427,16 @@ scatter_pl_sw = makeplot('petal_length','petal_width')
 ##### Fig 7 
 ![Sepal Width Sepal Length Scatter](https://github.com/conor1982/Iris_Project_2020/blob/master/Scatterplots/Scatterplot%20of%20sepal_length%20and%20sepal_width.png)
 
-This scatter plot shows that Setosa is distinguisable from the other two species of Iris. However a lot of ovelap can be seen between Veriscolor and Virginica. Looking back to the correaltion table we see that there is a *Small* negative correaltion of -0.11 between the two species. 
+This scatter plot shows that Setosa is distinguishable from the other two species of Iris. However a lot of ovelap can be seen between Veriscolor and Virginica. Looking back to the correlation table we see that there is a *Small* negative correlation of -0.11 between the two species. 
 
 #### Petal Width and Petal Length Scatter Plot
 
 ##### Fig 8
 ![Petal Width Petal Length Scatter](https://github.com/conor1982/Iris_Project_2020/blob/master/Scatterplots/Scatterplot%20of%20petal_length%20and%20petal_width.png)
 
-This scatter plot shows that Setosa is distinguisable from the other two species of Iris. There is some minor ovelap can be seen between Veriscolor and Virginica. Looking back to the correaltion table we see that these variables have the strongest positive correaltion and would be the most useful when trying to predict a species type based  on petal width and petal length.
+This scatter plot shows that Setosa is distinguishable from the other two species of Iris. There is some minor overlap can be seen between Veriscolor and Virginica. Looking back to the correlation table we see that these variables have the strongest positive correlation and would be the most useful when trying to predict a species type based on petal width and petal length.
 
-There is also *Strong* correlations between sepal length:petal length and sepal length:petal width but the overlap between Versicolor and Virginica is more prevelant than can be seen when analysing petal width:petal length.
+There is also *Strong* correlations between sepal length:petal length and sepal length:petal width but the overlap between Versicolor and Virginica is more prevalent than what is observed when analysing petal width:petal length.
 
 ##### Fig 9
 ![Sepal Length Petal Length Scatter](https://github.com/conor1982/Iris_Project_2020/blob/master/Scatterplots/Scatterplot%20of%20sepal_length%20and%20petal_length.png)
@@ -445,7 +450,7 @@ A histogram is a plot that lets you discover, and show, the underlying frequency
 
 To construct a histogram from a continuous variable you first need to split the data into intervals, called bins [15]
 
-A histogram was created for each variable The data for each was split into 5 bins. A function was created with the function parameter being the variable i.e. sepal width, petal length etc. This allowed for more effiecnt code when creating a Histogram for each variable. These Histograms also display the PDF (probability density function) which will be looked at in more detail later on.
+A histogram was created for each variable The data for each was split into 5 bins. A function was created with the function parameter being the variable i.e. sepal width, petal length etc. This allowed for more efficient code when creating a Histogram for each variable. These Histograms also display the PDF (probability density function) which will be looked at in more detail later on.
 
 #### Code example
 
@@ -471,26 +476,26 @@ pet_width_hist =makehist('petal_width')
 ##### Fig 11
 ![Sepal Length Histogram](https://github.com/conor1982/Iris_Project_2020/blob/master/Histograms/Histogram%20of%20sepal_length.png)
 
-We can observe from the Histogram there is considerable overlap between the three species
+We can observe from the Histogram there is considerable overlap between the three species.
 
 #### Sepal Width
 
 ##### Fig 12
 ![Sepal Width Histogram](https://github.com/conor1982/Iris_Project_2020/blob/master/Histograms/Histogram%20of%20sepal_width.png)
 
-We can observe from this Histogram that all species are fully overlapped
+We can observe from this Histogram that all species are fully overlapped.
 
 #### Petal Length
 
 ##### Fig 13
 ![Petal Length Histogram](https://github.com/conor1982/Iris_Project_2020/blob/master/Histograms/Histogram%20of%20petal_length.png)
 
-We can obseve from the Histogram that Setosa is easily seperable while there is some overlap between Versicolor and Virginica.
+We can observe from the Histogram that Setosa is easily separable while there is some overlap between Versicolor and Virginica.
 
 Creating a basic model: [20]
 
 * if petal length < 2.1 then Setosa - this would have 100% accuracy
-* if petal length >2.1 and <= 4.8 the Versilcolor - this would be accuarate for 92%
+* if petal length >2.1 and <= 4.8 the Versilcolor - this would be accurate for 92%
 * if petal length > 4.8 then Virginica - this would be accurate for 94% 
 
 The above shows how using Histograms can be very useful when creating an initial high level model for identifying species type in this dataset.
@@ -520,13 +525,13 @@ max_vir_pl = 4.8
 print('Univariate Analysis of Petal Length based on Histograms Observations')
 
 setosa_accuracy = np.count_nonzero(set_pl[:]<max_set_pl)/np.count_nonzero(set_pl)
-print("Applying {} as the maximum petal length to identify a Setosa Flower would have an accuaracy of {:.2%}".format(max_set_pl,setosa_accuracy))
+print("Applying {} as the maximum petal length to identify a Setosa Flower would have an accuracy of {:.2%}".format(max_set_pl,setosa_accuracy))
 
 versicolor_accuracy = np.count_nonzero(versi_pl[:]<=max_versi_pl)/np.count_nonzero(versi_pl)
-print("Applying {} as the maximum petal length to identify a Versilcolor Flower would have an accuaracy of {:.2%}".format(max_versi_pl,versicolor_accuracy))
+print("Applying {} as the maximum petal length to identify a Versilcolor Flower would have an accuracy of {:.2%}".format(max_versi_pl,versicolor_accuracy))
 
 virginica_accuracy = np.count_nonzero(vir_pl[:]>max_vir_pl)/np.count_nonzero(vir_pl)
-print("Applying {} as the maximum petal length to identify a Virginica Flower would have an accuaracy of {:.2%}".format(max_vir_pl,virginica_accuracy))
+print("Applying {} as the maximum petal length to identify a Virginica Flower would have an accuracy of {:.2%}".format(max_vir_pl,virginica_accuracy))
 ```
 
 #### Petal Width
@@ -534,7 +539,7 @@ print("Applying {} as the maximum petal length to identify a Virginica Flower wo
 ##### Fig 14
 ![Petal Width Length Histogram](https://github.com/conor1982/Iris_Project_2020/blob/master/Histograms/Histogram%20of%20petal_width.png)
 
-We can obseve from the Histogram that Setosa is easily seperable while there is a wider overlap between Versicolor and Virginica in compared to the petal length Histogram.
+We can observe from the Histogram that Setosa is easily separable while there is a wider overlap between Versicolor and Virginica in compared to the petal length Histogram.
 
 ### PDF (Probability Density Function) and CDF (Cumulative Distribution Frequency)
 
@@ -563,7 +568,7 @@ versi_pl_cdf = np.cumsum(versi_pl_pdf)
 vir_pl_pdf = vir_pl/sum(vir_pl) 
 vir_pl_cdf = np.cumsum(vir_pl_pdf)
 
-#Function to creat PDF CDF graph
+#Function to create PDF CDF graph
 # ref [X]
 # ref [Y]
 def cdf_pdf(variant,variable):
@@ -625,8 +630,8 @@ vir_pl_cdf_pdf = cdf_pdf('Iris-virginica','petal_length')
 We can observe from this Graph that: [19]
 
 * 100% of Setosa's have a petal length <2
-* approx 95% of Versicolor  have a petal length of <= 5
-* approx 90% of Virigina have a petal length >5
+* approx. 95% of Versicolor  have a petal length of <= 5
+* approx. 90% of Virigina have a petal length >5
 
 ***
 ## Summary and Conclusion
@@ -635,11 +640,11 @@ We can observe from this Graph that: [19]
 
 #### Python
 
-This project was an excellet learning curve into programming particulary Python. Having never used Pyhon before January 2020, this project offered the opportunity in particular to utilise the key Python libaries used for Data Analysis.
+This project provided an excellent learning curve into programming, particularly Python. Having never used Python before January 2020, this project offered an opportunity to build on the skills aquired doing the weekly tasks and to utilise key Python libaries used for Data Analysis.
 
-Getting to research and adopt some functions of the Pandas libary for this project was very interesting. Although still a bit to learn and making my code more streamlined, I feel I have the confidence now to apply some techniques leanred from Pandas in my current role.
+The research and use of some functions of the Pandas library for this project was very beneficial. Although I have still lots to learn particularly making my code more streamlined and learning to use more of the functionality, I feel I have the confidence now to apply some techniques learned from Pandas in my current role.
 
-Also, using Matplotlib and especially Seaborn opened up the incredible graphical and visualisation options on offer. This project was a great opportunity to discover and some of these functions.
+Also, using Matplotlib and especially Seaborn opened up the powerful graphical and visualisation options on offer. This project was a great opportunity to discover some of these functions and see working examples of them within the project.
 
 #### Github
 
@@ -651,15 +656,17 @@ Also, as advised in the project documentation, breaking up this project into sma
 
 #### Analysis
 
-As stated before and noted during research, the iris data set is a very popular dataset particularly in the teaching of data analyis and machine learning. Utilising the power of Python to create an exploratory analysis of the dataset was a the biggest learning outcome. 
+As stated and noted during research, the iris data set is a very popular dataset particularly in the teaching of data analysis and machine learning. Utilising the power of Python to create an exploratory analysis of the dataset was a the biggest learning outcome. 
 
-The next step will be learning and applying more statistical machine learning based approach to develop and apply more robust models for predicting and forecsating.
+The next step will be learning and applying more statistical machine learning based approach to develop and apply more robust models for predicting and forecasting.
 
 In this project, observations from histograms, scatterplots and density plots allowed me to create some basic control flow arguments that identify an Iris species based on a particular value. 
 
-From the observations and research, petal length was the best variable to create some models. While these might be somewhat useful as a basic predictor, as I move further along this course, I will develop more skills to adopt more mathematical and statistical functions and techniques.
+From the observations and research, petal length was the best variable to create models. While these might be somewhat useful as a basic predictor, as I move further along this course, I will develop more skills to adopt more mathematical and statistical functions and techniques.
 
+An example of the output of these simple model can be found below in Fig 19.
 
+![model summary](https://github.com/conor1982/Iris_Project_2020/blob/master/Screenshots/model.png)
 
 ##### Code example
 
@@ -686,7 +693,7 @@ print("Applying {} as the maximum petal length to identify a Versicolor Flower p
 
 #as above
 virginica_pred = np.count_nonzero(vir_pl[:]>=max_vir_pl)
-print("Applying {} as the minimum petal length to identify a Viriginica Flower would predicts {} Virginicas".format(max_vir_pl,virginica_pred))
+print("Applying {} as the minimum petal length to identify a Viriginica Flower predicts {} Virginicas".format(max_vir_pl,virginica_pred))
 
 
 #PDF CDF
@@ -867,4 +874,5 @@ print(vir_acc, 'error rate for Virginica')
 16. Versicolor PDF CDF Graph
 17. Virginica PDF CDF Graph
 18. Overall PDF CDF Graph
+19. Example of model result
 
